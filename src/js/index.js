@@ -1,201 +1,218 @@
-$(function(){
+$(function() {
     var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
-    $('.loading-in').animateNumber(
-      {
-        number: 100,
-        easing: 'easeInQuad',
-        numberStep: percent_number_step
-      },
-      1000
+    $('.loading-in').animateNumber({
+            number: 100,
+            easing: 'easeInQuad',
+            numberStep: percent_number_step
+        },
+        1000
     );
     setTimeout(function() {
         $('.loading').addClass("hide");
         $('.container').addClass("show");
     }, 1200);
+    //头部动画
+
+    $(".header-singledog").delay(1000).animate({
+        opacity: 1
+    }, 1000);
+    $(".header-singledog-word1").delay(2000).animate({
+        opacity: 1
+    }, 500);
+    $(".header-singledog-word2").delay(2500).animate({
+        opacity: 1
+    }, 500);
+    $(".header-singledog-word3").delay(3000).animate({
+        opacity: 1
+    }, 500);
+    $(".header-singledog-word4").delay(3500).animate({
+        opacity: 1
+    }, 500);
+
+
 
     //偷窥旅店
-    $("#peer_hotel").click(function(e){
+    $("#peer_hotel").click(function(e) {
         e.stopPropagation();
-       $("#hotel_box").addClass("show")
-    })
-   
-        
-    $("#hotelgo_on").click(function(e){
-        e.stopPropagation();
-       $("#hotel_box").removeClass("show");
-    })
-    $("#hotelwill_share").click(function(e){
-        e.stopPropagation();
-       $(".share").addClass("show");
-    })
-    $(".share").click(function(e){
-        e.stopPropagation();
-       $(".share").removeClass("show");
+        $("#hotel_box").addClass("show")
     })
 
-     //偷窥电影院
-     $("#peer_movie").click(function(e){
+
+    $("#hotelgo_on").click(function(e) {
         e.stopPropagation();
-       $("#movie_box").addClass("show")
+        $("#hotel_box").removeClass("show");
     })
-    $("#moviego_on").click(function(e){
+    $("#hotelwill_share").click(function(e) {
         e.stopPropagation();
-       $("#movie_box").removeClass("show");
+        $(".share").addClass("show");
     })
-    $("#moviewill_share").click(function(e){
+    $(".share").click(function(e) {
         e.stopPropagation();
-       $(".share").addClass("show");
-    })
-    $(".share").click(function(e){
-        e.stopPropagation();
-       $(".share").removeClass("show");
+        $(".share").removeClass("show");
     })
 
-     //偷窥KTV
-     $("#peer_ktv").click(function(e){
+    //偷窥电影院
+    $("#peer_movie").click(function(e) {
         e.stopPropagation();
-       $("#ktv_box").addClass("show")
+        $("#movie_box").addClass("show")
     })
-    $("#ktvgo_on").click(function(e){
+    $("#moviego_on").click(function(e) {
         e.stopPropagation();
-       $("#ktv_box").removeClass("show");
+        $("#movie_box").removeClass("show");
     })
-    $("#ktvwill_share").click(function(e){
+    $("#moviewill_share").click(function(e) {
         e.stopPropagation();
-       $(".share").addClass("show");
+        $(".share").addClass("show");
     })
-    $(".share").click(function(e){
+    $(".share").click(function(e) {
         e.stopPropagation();
-       $(".share").removeClass("show");
-    })
-
-     //偷窥papapa
-     $("#peer_doubleroom").click(function(e){
-        e.stopPropagation();
-       $("#doubleroom_box").addClass("show")
-    })
-    $("#doubleroomgo_on").click(function(e){
-        e.stopPropagation();
-       $("#doubleroom_box").removeClass("show");
-    })
-    $("#doubleroomwill_share").click(function(e){
-        e.stopPropagation();
-       $(".share").addClass("show");
-    })
-    $(".share").click(function(e){
-        e.stopPropagation();
-       $(".share").removeClass("show");
+        $(".share").removeClass("show");
     })
 
-     //偷窥摩天轮
-     $("#peer_wheel").click(function(e){
+    //偷窥KTV
+    $("#peer_ktv").click(function(e) {
         e.stopPropagation();
-       $("#wheel_box").addClass("show")
+        $("#ktv_box").addClass("show")
     })
-    $("#wheelgo_on").click(function(e){
+    $("#ktvgo_on").click(function(e) {
         e.stopPropagation();
-       $("#wheel_box").removeClass("show");
+        $("#ktv_box").removeClass("show");
     })
-    $("#wheelwill_share").click(function(e){
+    $("#ktvwill_share").click(function(e) {
         e.stopPropagation();
-       $(".share").addClass("show");
+        $(".share").addClass("show");
     })
-    $(".share").click(function(e){
+    $(".share").click(function(e) {
         e.stopPropagation();
-       $(".share").removeClass("show");
+        $(".share").removeClass("show");
     })
 
-     //偷窥银行
-     $("#peer_bank").click(function(e){
+    //偷窥papapa
+    $("#peer_doubleroom").click(function(e) {
         e.stopPropagation();
-       $("#bank_box").addClass("show")
+        $("#doubleroom_box").addClass("show")
     })
-    $("#bankgo_on").click(function(e){
+    $("#doubleroomgo_on").click(function(e) {
         e.stopPropagation();
-       $("#bank_box").removeClass("show");
+        $("#doubleroom_box").removeClass("show");
     })
-    $("#bankwill_share").click(function(e){
+    $("#doubleroomwill_share").click(function(e) {
         e.stopPropagation();
-       $(".share").addClass("show");
+        $(".share").addClass("show");
     })
-    $(".share").click(function(e){
+    $(".share").click(function(e) {
         e.stopPropagation();
-       $(".share").removeClass("show");
+        $(".share").removeClass("show");
+    })
+
+    //偷窥摩天轮
+    $("#peer_wheel").click(function(e) {
+        e.stopPropagation();
+        $("#wheel_box").addClass("show")
+    })
+    $("#wheelgo_on").click(function(e) {
+        e.stopPropagation();
+        $("#wheel_box").removeClass("show");
+    })
+    $("#wheelwill_share").click(function(e) {
+        e.stopPropagation();
+        $(".share").addClass("show");
+    })
+    $(".share").click(function(e) {
+        e.stopPropagation();
+        $(".share").removeClass("show");
+    })
+
+    //偷窥银行
+    $("#peer_bank").click(function(e) {
+        e.stopPropagation();
+        $("#bank_box").addClass("show")
+    })
+    $("#bankgo_on").click(function(e) {
+        e.stopPropagation();
+        $("#bank_box").removeClass("show");
+    })
+    $("#bankwill_share").click(function(e) {
+        e.stopPropagation();
+        $(".share").addClass("show");
+    })
+    $(".share").click(function(e) {
+        e.stopPropagation();
+        $(".share").removeClass("show");
     })
 
     //领取分享福利
-    $("#singledog_boon").click(function(e){
+    $("#singledog_boon").click(function(e) {
         e.stopPropagation();
-       $("#boon_box").addClass("show")
+        $("#boon_box").addClass("show")
     })
-    $("#get_welfare").click(function(e){
+    $("#get_welfare").click(function(e) {
         e.stopPropagation();
-       $("#boon_box").removeClass("show");
+        $("#boon_box").removeClass("show");
     })
-    $("#share_dear").click(function(e){
+    $("#share_dear").click(function(e) {
         e.stopPropagation();
-       $("#share_dear_shadow").addClass("show");
+        $("#share_dear_shadow").addClass("show");
     })
-    $("#share_dear_shadow").click(function(e){
+    $("#share_dear_shadow").click(function(e) {
         e.stopPropagation();
-       $("#share_dear_shadow").removeClass("show");
+        $("#share_dear_shadow").removeClass("show");
     })
 
     myScroll = new IScroll('#wrapper');
-    myScroll.on('scrollStart', function () {
-        if(-this.y>=372){
-        $(".hotel-singledog").css({opacity:(-this.y-372)/300});
-        
+    myScroll.on('scrollStart', function() {
+        // console.log(-this.y)
+        if (-this.y >= 330) {
+            $(".hotel-singledog").css({ opacity: (-this.y - 330) / 200 });
+
         }
-         if(-this.y>=750){
-           
-            $(".hotel-singledog").css({opacity: 1-[(-this.y-750)/400]});
+        if (-this.y >= 750) {
+
+            $(".hotel-singledog").css({ opacity: 1 - [(-this.y - 750) / 400] });
         }
 
-        if(-this.y>=1450){
-           
-            $(".movie-singledog").css({opacity:(-this.y-1450)/300});
+        if (-this.y >= 1220) {
+
+            $(".movie-singledog").css({ opacity: (-this.y - 1220) / 250 });
         }
-        if(-this.y>=2100){
-            
-             $(".movie-singledog").css({opacity: 1-[(-this.y-2100)/300]});
-         }
+        if (-this.y >= 1760) {
 
-         if(-this.y>=2500){
-            
-             $(".ktv-singledog").css({opacity:(-this.y-2500)/300});
-         }
+            $(".movie-singledog").css({ opacity: 1 - [(-this.y - 1760) / 300] });
+        }
 
-         if(-this.y>=3000){
-            
-             $(".ktv-singledog").css({opacity: 1-[(-this.y-3000)/300]});
-         }
-         if(-this.y>=3500){
-            
-             $(".doubleroom-singledog").css({opacity:(-this.y-3500)/300});
-         }
-         if(-this.y>=4000){
-            
-             $(".doubleroom-singledog").css({opacity: 1-[(-this.y-4000)/300]});
-         }
-         if(-this.y>=4200){
-            
-             $(".wheel-singledog").css({opacity:(-this.y-4200)/300});
-         }
-         if(-this.y>=4700){
-            
-             $(".wheel-singledog").css({opacity: 1-[(-this.y-4700)/300]});
-         }
-         if(-this.y>=5000){
-            
-             $(".bank-singledog").css({opacity:(-this.y-5000)/300});
-         }
-         if(-this.y>=5400){
-            
-             $(".bank-singledog").css({opacity: 1-[(-this.y-5400)/200]});
-         }
+        if (-this.y >= 2200) {
+
+            $(".ktv-singledog").css({ opacity: (-this.y - 2200) / 200 });
+        }
+
+        if (-this.y >= 2770) {
+
+            $(".ktv-singledog").css({ opacity: 1 - [(-this.y - 2770) / 230] });
+        }
+        if (-this.y >= 3030) {
+
+            $(".doubleroom-singledog").css({ opacity: (-this.y - 3030) / 200 });
+        }
+        if (-this.y >= 3550) {
+
+            $(".doubleroom-singledog").css({ opacity: 1 - [(-this.y - 3550) / 300] });
+        }
+        if (-this.y >= 3680) {
+
+            $(".wheel-singledog").css({ opacity: (-this.y - 3680) / 200 });
+        }
+        if (-this.y >= 4260) {
+
+            $(".wheel-singledog").css({ opacity: 1 - [(-this.y - 4260) / 150] });
+        }
+        if (-this.y >= 4465) {
+
+            $(".bank-singledog").css({ opacity: (-this.y - 4465) / 200 });
+        }
+        if (-this.y >= 4700) {
+
+            $(".bank-singledog").css({ opacity: 1 - [(-this.y - 4700) / 200] });
+        }
     });
-        
-}) 
 
-
+})

@@ -1,589 +1,859 @@
-@import "./public/reset.scss";
-@import "./public/Style.scss";
+@import './public/reset.scss';
+@import './public/Style.scss';
 
-.clear{
-  clear: both;
+.clear {
+    clear: both;
 }
-body,html{
-  height: 100%;
+
+body,
+html {
+    height: 100%;
 }
-body{
-  width: rem(750);
-  overflow: hidden;
+
+body {
+    overflow: hidden;
+
+    width: rem(750);
 }
+
 #wrapper {
- 
-
-	/* Prevent native touch events on Windows */
-	-ms-touch-action: none;
-
-	/* Prevent the callout on tap-hold and text selection */
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
-	/* Prevent text resize on orientation change, useful for web-apps */
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	-o-text-size-adjust: none;
-	text-size-adjust: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Prevent native touch events on Windows */
+    -ms-touch-action: none;
+    /* Prevent the callout on tap-hold and text selection */
+    -webkit-touch-callout: none;
+    /* Prevent text resize on orientation change, useful for web-apps */
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
 #scroller {
-	position: absolute;
+    position: absolute;
+    /* Put the scroller into the HW Compositing layer right from the start */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    /* Prevent elements to be highlighted on tap */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
-	/* Prevent elements to be highlighted on tap */
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+.loading {
+    z-index: 100;
 
-	/* Put the scroller into the HW Compositing layer right from the start */
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
+    display: flex;
+
+    width: rem(750);
+    height: rem(1334);
+
+    @include bg_fn(url('../img/loding.gif'),
+    no-repeat,
+    center,
+    cover);
+    &.hide {
+        position: absolute;
+        z-index: -100;
+
+        display: none;
+    }
+    .loading-in {
+        font-size: rem(36);
+        font-weight: 600;
+
+        display: block;
+
+        margin: 0 auto;
+        margin-top: rem(1100);
+    }
 }
-@keyframes fadein{
-  from{
-    opacity:0
-  }to{
-    opacity:1
-  }
-}
-.loading{
-  display: flex;
-  z-index: 100;
-  width: rem(750);
-  height: rem(1334);
-  @include bg_fn(url("../img/loding.png"), no-repeat, center, cover);
-  &.hide{
-    display: none;
-   position:absolute;
-   z-index: -100;
-  }
-  .loading-in{
-    display: block;
-    margin:0 auto;
-    margin-top: rem(1100);
-    font-size: rem(36);
-    font-weight: 600;
-  }
-}
-.share{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  @include bg_fn(url("../img/shareshade.png"), no-repeat, center, cover);
-  z-index: -200;
-  opacity: 0;
-  &.show{
-    z-index: 101;
-    opacity: 1;
-  }
-}
-.share-dear-shadow{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  @include bg_fn(url("../img/shareshade2.png"), no-repeat, center, cover);
-  z-index: -200;
-  opacity: 0;
-  &.show{
-    z-index: 101;
-    opacity: 1;
-  }
-}
-.hotel-box{
-  // overflow:auto;
-  position: fixed;
-  background: rgba(0,0,0,.6);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  &.show{
-    z-index: 13;
-    opacity: 1;
-  }
-  .hotel-popover{
-    position: absolute;
-    width: rem(720);
-    height: rem(1280);
+
+.share {
+    position: fixed;
     z-index: -200;
-    @include bg_fn(url("../img/hotelpopover.gif"), no-repeat, center, cover);
-    }
-    .go-on{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(63);
-      position: absolute;
-    }
-    .will-share{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(389);
-      position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0;
+
+    @include bg_fn(url('../img/shareshade.png'),
+    no-repeat,
+    center,
+    cover);
+    &.show {
+        z-index: 101;
+
+        opacity: 1;
     }
 }
-.movie-box{
-  position: fixed;
-  background: rgba(0,0,0,.6);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  &.show{
-    z-index: 13;
-    opacity: 1;
-  }
- .movie-popover{
-    position: absolute;
-    width: rem(720);
-    height: rem(1280);
+
+.share-dear-shadow {
+    position: fixed;
     z-index: -200;
-    @include bg_fn(url("../img/moviepopover.gif"), no-repeat, center, cover);
-    }
-    .go-on{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(63);
-      position: absolute;
-    }
-    .will-share{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(389);
-      position: absolute;
-    }
-}
-.ktv-box{
-  position: fixed;
-  background: rgba(0,0,0,.6);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  &.show{
-    z-index: 13;
-    opacity: 1;
-  }
- .ktv-popover{
-    position: absolute;
-    width: rem(720);
-    height: rem(1280);
-    z-index: -200;
-    @include bg_fn(url("../img/ktvpopover.gif"), no-repeat, center, cover);
-    }
-    .go-on{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(63);
-      position: absolute;
-    }
-    .will-share{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(389);
-      position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0;
+
+    @include bg_fn(url('../img/shareshade2.png'),
+    no-repeat,
+    center,
+    cover);
+    &.show {
+        z-index: 101;
+
+        opacity: 1;
     }
 }
-.doubleroom-box{
-  position: fixed;
-  background: rgba(0,0,0,.6);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  &.show{
-    z-index: 13;
-    opacity: 1;
-  }
- .doubleroom-popover{
-    position: absolute;
-    width: rem(720);
-    height: rem(1280);
-    z-index: -200;
-    @include bg_fn(url("../img/doubleroompopover.gif"), no-repeat, center, cover);
-    }
-    .go-on{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(63);
-      position: absolute;
-    }
-    .will-share{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(389);
-      position: absolute;
-    }
-  
-}
-.wheel-box{
-  position: fixed;
-  background: rgba(0,0,0,.6);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  &.show{
-    z-index: 13;
-    opacity: 1;
-  }
- .wheel-popover{
-    position: absolute;
-    width: rem(720);
-    height: rem(1280);
-    z-index: -200;
-    @include bg_fn(url("../img/wheelpopover.gif"), no-repeat, center, cover);
-    }
-    .go-on{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(63);
-      position: absolute;
-    }
-    .will-share{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(389);
-      position: absolute;
-    }
-}
-.bank-box{
-  position: fixed;
-  background: rgba(0,0,0,.6);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  &.show{
-    z-index: 13;
-    opacity: 1;
-  }
- .bank-popover{
-    position: absolute;
-    width: rem(720);
-    height: rem(1280);
-    z-index: -200;
-    @include bg_fn(url("../img/bankpopover.gif"), no-repeat, center, cover);
-    }
-    .go-on{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(63);
-      position: absolute;
-    }
-    .will-share{
-      width: rem(266);
-      height: rem(76);
-      top: rem(1145);
-      left: rem(389);
-      position: absolute;
-    }
-}
-.boon-box{
-  position: fixed;
-  background: rgba(0,0,0,.6);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  &.show{
-    z-index: 13;
-    opacity: 1;
-  }
- .get-singledog-boon{
-    position: absolute;
-    width: rem(720);
-    height: rem(1280);
-    z-index: -200;
-    @include bg_fn(url("../img/singledogboon.gif"), no-repeat, center, cover);
-    }
-  .get-welfare{
-    width: rem(326);
-    height: rem(83);
-    top: rem(1024);
-    left: rem(25);
-    position: absolute;
-  }
-  .share-dear{
-    width: rem(326);
-    height: rem(83);
-    top: rem(1024);
-    left: rem(366);
-    position: absolute;
-  }
-}
-.app{
-  width: rem(750);
-  height:100%;
-	position: absolute;
-	overflow: hidden;
-  .container{
-    // display: none;
-    overflow: hidden;
-    position: absolute;
-  
+
+.hotel-box {
+    position: fixed;
     z-index: -10;
-    &.show{
-      display: block;
-      z-index: 10;
-    }
-    .architecture{
-      width: rem(750);
-      height: rem(1280);
-      @include bg_fn(url("../img/architecture.gif"), no-repeat, center, cover);
-    }
-    .hotel{
-      width: rem(750);
-      height: rem(1280);
-      @include bg_fn(url("../img/hotel.gif"), no-repeat, center, cover);
-    }
-    .movie{
-      width: rem(750);
-      height: rem(1280);
-      @include bg_fn(url("../img/movie.gif"), no-repeat, center, cover);
-    }
-    .ktvtop{
-      width: rem(750);
-      height: rem(1360);
-      @include bg_fn(url("../img/ktvtop.gif"), no-repeat, center, cover);
-    }
-    .ktvdown{
-      width: rem(750);
-      height: rem(1000);
-      @include bg_fn(url("../img/ktvdown.gif"), no-repeat, center, cover);
-    }
-    .doubleroom{
-      width: rem(750);
-      height: rem(1700);
-      @include bg_fn(url("../img/doubleroom.gif"), no-repeat, center, cover);
-    }
-    .wheel{
-      width: rem(750);
-      height: rem(1740);
-      @include bg_fn(url("../img/wheel.gif"), no-repeat, center, cover);
-    }
-    .bank{
-      width: rem(750);
-      height: rem(1260);
-      @include bg_fn(url("../img/bank.gif"), no-repeat, center, cover);
-    }
-    .tree{
-      width: rem(750);
-      height: rem(600);
-      @include bg_fn(url("../img/tree.gif"), no-repeat, center, cover);
-    }
-    .boon{
-      width: rem(750);
-      height: rem(1100);
-      @include bg_fn(url("../img/boon.gif"), no-repeat, center, cover);
-    }
-    .header-singledog{
-      position: absolute;
-      top:rem(0);
-      width: rem(750);
-      height: rem(800);
-      @include bg_fn(url("../img/header.png"), no-repeat, center, cover);
-      z-index: 11;
-      
-    }
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-    .hotel-singledog{
-      position: absolute;
-      top: rem(2100);
-      left: rem(53);
-      width: rem(435);
-      height: rem(520);
-      @include bg_fn(url("../img/run.gif"), no-repeat, center, cover);
-      z-index: 11;
-      opacity: 0;
-    }
-    .movie-singledog{
-      position: absolute;
-      top: rem(3953);
-      left: rem(203);
-      width: rem(435);
-      height: rem(520);
-      @include bg_fn(url("../img/run.gif"), no-repeat, center, cover);
-      z-index: 11;
-      opacity: 0;
-    }
-    .ktv-singledog{
-      position: absolute;
-      top: rem(5902);
-      left: rem(53);
-      width: rem(435);
-      height: rem(520);
-      @include bg_fn(url("../img/run.gif"), no-repeat, center, cover);
-      z-index: 11;
-      opacity: 0;
-    }
-    .doubleroom-singledog{
-      position: absolute;
-      top: rem(7725);
-      left: rem(353);
-      width: rem(435);
-      height: rem(520);
-      @include bg_fn(url("../img/run.gif"), no-repeat, center, cover);
-      z-index: 11;
-      opacity: 0;
-    }
-    .wheel-singledog{
-      position: absolute;
-      top: rem(9075);
-      left: rem(-128);
-      width: rem(435);
-      height: rem(520);
-      @include bg_fn(url("../img/run.gif"), no-repeat, center, cover);
-      z-index: 11;
-      opacity: 0;
-    }
-    .bank-singledog{
-      position: absolute;
-      top: rem(10523);
-      left: rem(398);
-      width: rem(435);
-      height: rem(520);
-      @include bg_fn(url("../img/run.gif"), no-repeat, center, cover);
-      z-index: 11;
-      opacity: 0;
-    }
-    .peer-hotel{
-      position: absolute;
-      width: rem(375);
-      height: rem(142);
-      @include bg_fn(url("../img/peepbutton.png"), no-repeat, center, cover);
-      z-index: 12;
-      top: rem(1975);
-      left: rem(350)
-    }
-    
-   
-  
-    
-    .peer-movie{
-      position: absolute;
-      width: rem(375);
-      height: rem(142);
-      @include bg_fn(url("../img/peepbutton.png"), no-repeat, center, cover);
-      z-index: 12;
-      top: rem(3848);
-    }
- 
-    
-    .peer-ktv{
-      position: absolute;
-      width: rem(375);
-      height: rem(142);
-      @include bg_fn(url("../img/peepbutton.png"), no-repeat, center, cover);
-      z-index: 12;
-      top: rem(5723);
-      left: rem(270);
-    }
-    
-   
-    .peer-doubleroom{
-      position: absolute;
-      width: rem(375);
-      height: rem(142);
-      @include bg_fn(url("../img/peepbutton.png"), no-repeat, center, cover);
-      z-index: 12;
-      top: rem(7298);
-      left: rem(270);
-    }
-   
-   
-    .peer-wheel{
-      position: absolute;
-      width: rem(375);
-      height: rem(142);
-      @include bg_fn(url("../img/peepbutton.png"), no-repeat, center, cover);
-      z-index: 12;
-      top: rem(8797);
-      left: rem(270);
-    }
-    
-   
-    .peer-bank{
-      position: absolute;
-      width: rem(375);
-      height: rem(142);
-      @include bg_fn(url("../img/peepbutton.png"), no-repeat, center, cover);
-      z-index: 12;
-      top: rem(10598);
-      left: rem(195);
-    }
-    .singledog-boon{
-      position: absolute;
-      width: rem(142);
-      height: rem(220);
-      z-index: 20;
-      top: rem(12233);
-      left: rem(263);
-    }
-  }
- 
- 
+    display: flex;
+    flex-direction: column;
 
+    opacity: 0;
+    background: rgba(0, 0, 0, .6);
+
+    align-items: center;
+    justify-content: center;
+    &.show {
+        z-index: 13;
+
+        opacity: 1;
+    }
+    .hotel-popover {
+        position: absolute;
+        z-index: -200;
+
+        width: rem(648);
+        height: rem(1152);
+
+        @include bg_fn(url('../img/hotelpopover.gif'),
+        no-repeat,
+        center,
+        cover);
+    }
+    .go-on {
+        position: absolute;
+        top: rem(1028);
+        left: rem(63);
+
+        width: rem(266);
+        height: rem(76);
+    }
+    .will-share {
+        position: absolute;
+        top: rem(1028);
+        left: rem(389);
+
+        width: rem(266);
+        height: rem(76);
+    }
+}
+
+.movie-box {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    background: rgba(0, 0, 0, .6);
+
+    align-items: center;
+    justify-content: center;
+    &.show {
+        z-index: 13;
+
+        opacity: 1;
+    }
+    .movie-popover {
+        position: absolute;
+        z-index: -200;
+
+        width: rem(648);
+        height: rem(1152);
+
+        @include bg_fn(url('../img/moviepopover.gif'),
+        no-repeat,
+        center,
+        cover);
+    }
+    .go-on {
+        position: absolute;
+        top: rem(1028);
+        left: rem(63);
+
+        width: rem(266);
+        height: rem(76);
+    }
+    .will-share {
+        position: absolute;
+        top: rem(1028);
+        left: rem(389);
+
+        width: rem(266);
+        height: rem(76);
+    }
+}
+
+.ktv-box {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    background: rgba(0, 0, 0, .6);
+
+    align-items: center;
+    justify-content: center;
+    &.show {
+        z-index: 13;
+
+        opacity: 1;
+    }
+    .ktv-popover {
+        position: absolute;
+        z-index: -200;
+
+        width: rem(648);
+        height: rem(1152);
+
+        @include bg_fn(url('../img/ktvpopover.gif'),
+        no-repeat,
+        center,
+        cover);
+    }
+    .go-on {
+        position: absolute;
+        top: rem(1028);
+        left: rem(63);
+
+        width: rem(266);
+        height: rem(76);
+    }
+    .will-share {
+        position: absolute;
+        top: rem(1028);
+        left: rem(389);
+
+        width: rem(266);
+        height: rem(76);
+    }
+}
+
+.doubleroom-box {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    background: rgba(0, 0, 0, .6);
+
+    align-items: center;
+    justify-content: center;
+    &.show {
+        z-index: 13;
+
+        opacity: 1;
+    }
+    .doubleroom-popover {
+        position: absolute;
+        z-index: -200;
+
+        width: rem(648);
+        height: rem(1152);
+
+        @include bg_fn(url('../img/doubleroompopover.gif'),
+        no-repeat,
+        center,
+        cover);
+    }
+    .go-on {
+        position: absolute;
+        top: rem(1028);
+        left: rem(63);
+
+        width: rem(266);
+        height: rem(76);
+    }
+    .will-share {
+        position: absolute;
+        top: rem(1028);
+        left: rem(389);
+
+        width: rem(266);
+        height: rem(76);
+    }
+}
+
+.wheel-box {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    background: rgba(0, 0, 0, .6);
+
+    align-items: center;
+    justify-content: center;
+    &.show {
+        z-index: 13;
+
+        opacity: 1;
+    }
+    .wheel-popover {
+        position: absolute;
+        z-index: -200;
+
+        width: rem(648);
+        height: rem(1152);
+
+        @include bg_fn(url('../img/wheelpopover.gif'),
+        no-repeat,
+        center,
+        cover);
+    }
+    .go-on {
+        position: absolute;
+        top: rem(1028);
+        left: rem(63);
+
+        width: rem(266);
+        height: rem(76);
+    }
+    .will-share {
+        position: absolute;
+        top: rem(1028);
+        left: rem(389);
+
+        width: rem(266);
+        height: rem(76);
+    }
+}
+
+.bank-box {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    background: rgba(0, 0, 0, .6);
+
+    align-items: center;
+    justify-content: center;
+    &.show {
+        z-index: 13;
+
+        opacity: 1;
+    }
+    .bank-popover {
+        position: absolute;
+        z-index: -200;
+
+        width: rem(648);
+        height: rem(1152);
+
+        @include bg_fn(url('../img/bankpopover.gif'),
+        no-repeat,
+        center,
+        cover);
+    }
+    .go-on {
+        position: absolute;
+        top: rem(1028);
+        left: rem(63);
+
+        width: rem(266);
+        height: rem(76);
+    }
+    .will-share {
+        position: absolute;
+        top: rem(1028);
+        left: rem(389);
+
+        width: rem(266);
+        height: rem(76);
+    }
+}
+
+.boon-box {
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    background: rgba(0, 0, 0, .6);
+
+    align-items: center;
+    justify-content: center;
+    &.show {
+        z-index: 13;
+
+        opacity: 1;
+    }
+    .get-singledog-boon {
+        position: absolute;
+        z-index: -200;
+        width: rem(648);
+        height: rem(1152);
+
+        @include bg_fn(url('../img/singledogboon.gif'),
+        no-repeat,
+        center,
+        cover);
+    }
+    .get-welfare {
+        position: absolute;
+        top: rem(915);
+        left: rem(25);
+
+        width: rem(285);
+        height: rem(83);
+    }
+    .share-dear {
+        position: absolute;
+        top: rem(915);
+        left: rem(338);
+        width: rem(285);
+        height: rem(83);
+    }
+}
+
+.app {
+    position: absolute;
+
+    overflow: hidden;
+
+    width: rem(750);
+    height: 100%;
+    .container {
+        position: absolute;
+        z-index: -10;
+
+        overflow: hidden;
+        &.show {
+            z-index: 10;
+
+            display: block;
+        }
+        .architecture {
+            width: rem(750);
+            height: rem(1280);
+
+            @include bg_fn(url('../img/architecture.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .hotel {
+            width: rem(750);
+            height: rem(1280);
+
+            @include bg_fn(url('../img/hotel.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .movie {
+            width: rem(750);
+            height: rem(1280);
+
+            @include bg_fn(url('../img/movie.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .ktvtop {
+            width: rem(750);
+            height: rem(1360);
+
+            @include bg_fn(url('../img/ktvtop.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .ktvdown {
+            width: rem(750);
+            height: rem(1000);
+
+            @include bg_fn(url('../img/ktvdown.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .doubleroom {
+            width: rem(750);
+            height: rem(1700);
+
+            @include bg_fn(url('../img/doubleroom.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .wheel {
+            width: rem(750);
+            height: rem(1740);
+
+            @include bg_fn(url('../img/wheel.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .bank {
+            width: rem(750);
+            height: rem(1260);
+
+            @include bg_fn(url('../img/bank.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .tree {
+            width: rem(750);
+            height: rem(600);
+
+            @include bg_fn(url('../img/tree.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .boon {
+            width: rem(750);
+            height: rem(1100);
+
+            @include bg_fn(url('../img/boon.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .header-singledog {
+            position: absolute;
+            z-index: 11;
+            top: rem(0);
+
+            width: rem(750);
+            height: rem(800);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/header.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .header-singledog-word1 {
+            position: absolute;
+            z-index: 11;
+            top: rem(0);
+
+            width: rem(750);
+            height: rem(800);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/header-singledog-word1.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .header-singledog-word2 {
+            position: absolute;
+            z-index: 11;
+            top: rem(0);
+
+            width: rem(750);
+            height: rem(800);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/header-singledog-word2.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .header-singledog-word3 {
+            position: absolute;
+            z-index: 11;
+            top: rem(0);
+
+            width: rem(750);
+            height: rem(800);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/header-singledog-word3.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .header-singledog-word4 {
+            position: absolute;
+            z-index: 11;
+            top: rem(0);
+
+            width: rem(750);
+            height: rem(800);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/header-singledog-word4.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+
+        .hotel-singledog {
+            position: absolute;
+            z-index: 11;
+            top: rem(2100);
+            left: rem(53);
+
+            width: rem(435);
+            height: rem(520);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/run.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .movie-singledog {
+            position: absolute;
+            z-index: 11;
+            top: rem(3953);
+            left: rem(203);
+
+            width: rem(435);
+            height: rem(520);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/run.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .ktv-singledog {
+            position: absolute;
+            z-index: 11;
+            top: rem(5902);
+            left: rem(53);
+
+            width: rem(435);
+            height: rem(520);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/run.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .doubleroom-singledog {
+            position: absolute;
+            z-index: 11;
+            top: rem(7725);
+            left: rem(353);
+
+            width: rem(435);
+            height: rem(520);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/run.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .wheel-singledog {
+            position: absolute;
+            z-index: 11;
+            top: rem(9075);
+            left: rem(-128);
+
+            width: rem(435);
+            height: rem(520);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/run.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .bank-singledog {
+            position: absolute;
+            z-index: 11;
+            top: rem(10523);
+            left: rem(398);
+
+            width: rem(435);
+            height: rem(520);
+
+            opacity: 0;
+
+            @include bg_fn(url('../img/run.gif'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .peer-hotel {
+            position: absolute;
+            z-index: 12;
+            top: rem(1975);
+            left: rem(350);
+            ;
+
+            width: rem(375);
+            height: rem(142);
+
+            @include bg_fn(url('../img/peepbutton.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+
+
+
+
+        .peer-movie {
+            position: absolute;
+            z-index: 12;
+            top: rem(3848);
+
+            width: rem(375);
+            height: rem(142);
+
+            @include bg_fn(url('../img/peepbutton.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+
+
+        .peer-ktv {
+            position: absolute;
+            z-index: 12;
+            top: rem(5723);
+            left: rem(270);
+
+            width: rem(375);
+            height: rem(142);
+
+            @include bg_fn(url('../img/peepbutton.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+
+
+        .peer-doubleroom {
+            position: absolute;
+            z-index: 12;
+            top: rem(7298);
+            left: rem(270);
+
+            width: rem(375);
+            height: rem(142);
+
+            @include bg_fn(url('../img/peepbutton.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+
+
+        .peer-wheel {
+            position: absolute;
+            z-index: 12;
+            top: rem(8797);
+            left: rem(270);
+
+            width: rem(375);
+            height: rem(142);
+
+            @include bg_fn(url('../img/peepbutton.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+
+
+        .peer-bank {
+            position: absolute;
+            z-index: 12;
+            top: rem(10598);
+            left: rem(195);
+
+            width: rem(375);
+            height: rem(142);
+
+            @include bg_fn(url('../img/peepbutton.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .singledog-boon {
+            position: absolute;
+            z-index: 20;
+            top: rem(12233);
+            left: rem(263);
+
+            width: rem(142);
+            height: rem(220);
+        }
+    }
 }
