@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('header.inc')
+    <title>11.11</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <script type="text/javascript">
+        
+        function isPassive() {
+            var supportsPassiveOption = false;
+            try {
+                addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                    get: function () {
+                        supportsPassiveOption = true;
+                    }
+                }));
+            } catch(e) {}
+            return supportsPassiveOption;
+        }
+            var myScroll;
+    function loaded () {
+        myScroll = new IScroll('#wrapper',{
+              click: true,
+              scrollY : true,         //滚动方向（垂直）  
+            //   startY : 10,             //滚动条开始的位置（纵坐标） 
+              tap : true,     
+        });
+    }
+    // myScroll.on('scrollStart',function(){
+    //     console.log(-this.y);     //当前位置 
+    // })  
+  
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+	capture: false,
+	passive: false
+} : false);
+       
+        </script>
+</head>
+<body onload="loaded()">
+        <div class="loading">
+                <span class="loading-in">0%</span>
+        </div>
+        <div class="share"></div>
+        <div id= "share_dear_shadow" class="share-dear-shadow"></div>
+        <!-- 旅店弹窗 -->
+        <div id="hotel_box" class="hotel-box">
+            <div class="hotel-popover">
+                <div id="hotelgo_on" class="go-on"></div>
+                <div id="hotelwill_share" class="will-share"></div>
+            </div>
+        </div>
+        <!-- 电影院弹窗 -->
+        <div id="movie_box" class="movie-box">
+            <div class="movie-popover">
+                <div id="moviego_on" class="go-on"></div>
+                <div id="moviewill_share" class="will-share"></div>
+            </div>
+        </div>
+        <!-- ktv弹窗 -->
+        <div id="ktv_box" class="ktv-box">
+            <div class="ktv-popover">
+                <div id="ktvgo_on" class="go-on"></div>
+                <div id="ktvwill_share" class="will-share"></div>
+            </div>
+        </div>
+        <!-- 大床房弹窗 -->
+        <div id="doubleroom_box" class="doubleroom-box">
+            <div class="doubleroom-popover">
+                <div id="doubleroomgo_on" class="go-on"></div>
+                <div id="doubleroomwill_share" class="will-share"></div>
+            </div>
+        </div>
+        <!-- 摩天轮弹窗 -->
+        <div id="wheel_box" class="wheel-box">
+            <div class="wheel-popover">
+                <div id="wheelgo_on" class="go-on"></div>
+                <div id="wheelwill_share" class="will-share"></div>
+            </div>
+        </div>
+        <!-- 银行弹窗 -->
+        <div id="bank_box" class="bank-box">
+            <div class="bank-popover">
+                <div id="bankgo_on" class="go-on"></div>
+                <div id="bankwill_share" class="will-share"></div>
+            </div>
+        </div>
+    <!-- 福利弹窗 -->
+        <div id="boon_box" class="boon-box">
+            <div id ="get_singledog_boon" class="get-singledog-boon">
+                <a  id="get_welfare" class="get-welfare"></a>
+                <div id="share_dear" class="share-dear"></div>
+            </div>
+        </div>
+
+<div class="app" id="wrapper">
+	<div class="container" id="scroller">
+            <div class="architecture"></div>
+            <div class="hotel"></div>
+            <div class="movie"></div>
+            <div class="ktvtop"></div>
+            <div class="ktvdown"></div>
+            <div class="doubleroom"></div>
+            <div class="wheel"></div>
+            <div class="bank"></div>
+            <div class="tree"></div>
+            <div class="boon"></div>
+            <div class="header-singledog"></div>
+            <div class="hotel-singledog"></div>
+            <div id="peer_hotel" class="peer-hotel"></div>
+            <div class="movie-singledog"></div>
+            <div id="peer_movie" class="peer-movie"></div>
+            <div class="ktv-singledog"></div>
+            <div id="peer_ktv" class="peer-ktv"></div>
+            <div class="doubleroom-singledog"></div>
+            <div id="peer_doubleroom" class="peer-doubleroom"></div>
+            <div class="wheel-singledog"></div>
+            <div id="peer_wheel" class="peer-wheel"></div>
+            <div class="bank-singledog"></div>
+            <div id="peer_bank" class="peer-bank"></div>
+            <div id= "singledog_boon" class="singledog-boon"></div>
+    </div>
+</div>
+
+    <script src="../js/index.js"></script>
+</body>
+</html>
