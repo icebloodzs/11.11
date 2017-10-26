@@ -123,15 +123,13 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-
-    display: flex;
-    flex-direction: column;
+    padding-left: rem(45);
+   
 
     opacity: 0;
     background: rgba(0, 0, 0, .6);
 
-    align-items: center;
-    justify-content: center;
+   
     &.show {
         z-index: 13;
 
@@ -175,14 +173,12 @@ body {
     bottom: 0;
     left: 0;
 
-    display: flex;
-    flex-direction: column;
+    
 
     opacity: 0;
     background: rgba(0, 0, 0, .6);
 
-    align-items: center;
-    justify-content: center;
+    padding-left: rem(45);
     &.show {
         z-index: 13;
 
@@ -226,14 +222,12 @@ body {
     bottom: 0;
     left: 0;
 
-    display: flex;
-    flex-direction: column;
+    
 
     opacity: 0;
     background: rgba(0, 0, 0, .6);
 
-    align-items: center;
-    justify-content: center;
+    padding-left: rem(45);
     &.show {
         z-index: 13;
 
@@ -277,14 +271,12 @@ body {
     bottom: 0;
     left: 0;
 
-    display: flex;
-    flex-direction: column;
+   
 
     opacity: 0;
     background: rgba(0, 0, 0, .6);
 
-    align-items: center;
-    justify-content: center;
+    padding-left: rem(45);
     &.show {
         z-index: 13;
 
@@ -328,14 +320,12 @@ body {
     bottom: 0;
     left: 0;
 
-    display: flex;
-    flex-direction: column;
+    
 
     opacity: 0;
     background: rgba(0, 0, 0, .6);
 
-    align-items: center;
-    justify-content: center;
+    padding-left: rem(45);
     &.show {
         z-index: 13;
 
@@ -379,14 +369,12 @@ body {
     bottom: 0;
     left: 0;
 
-    display: flex;
-    flex-direction: column;
+   
 
     opacity: 0;
     background: rgba(0, 0, 0, .6);
 
-    align-items: center;
-    justify-content: center;
+   padding-left: rem(45);
     &.show {
         z-index: 13;
 
@@ -430,14 +418,11 @@ body {
     bottom: 0;
     left: 0;
 
-    display: flex;
-    flex-direction: column;
+   
 
     opacity: 0;
     background: rgba(0, 0, 0, .6);
-
-    align-items: center;
-    justify-content: center;
+    padding-left: rem(45);
     &.show {
         z-index: 13;
 
