@@ -7,5 +7,5 @@
 	<script src="../js/common.js"></script>
 	<script src="../js/flexible.js"></script>
 	<script src="https://cdn.bootcss.com/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
-	<script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>
+	<script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll-infinite.min.js"></script>
 </head>

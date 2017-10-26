@@ -148,7 +148,7 @@ $(function() {
     })
     $("#get_welfare").click(function(e) {
         e.stopPropagation();
-        $("#boon_box").removeClass("show");
+        window.location.href = "https://mp.weixin.qq.com/s/JKWAnja65ieI3beUb0finQ";
     })
     $("#share_dear").click(function(e) {
         e.stopPropagation();
@@ -166,46 +166,53 @@ $(function() {
             $(".hotel-singledog").css({ opacity: (-this.y - 330) / 200 });
 
         }
+      
         if (-this.y >= 750) {
 
             $(".hotel-singledog").css({ opacity: 1 - [(-this.y - 750) / 400] });
         }
-
+     
         if (-this.y >= 1220) {
 
             $(".movie-singledog").css({ opacity: (-this.y - 1220) / 250 });
         }
+      
         if (-this.y >= 1760) {
 
             $(".movie-singledog").css({ opacity: 1 - [(-this.y - 1760) / 300] });
         }
-
+     
         if (-this.y >= 2200) {
 
             $(".ktv-singledog").css({ opacity: (-this.y - 2200) / 200 });
         }
-
+     
         if (-this.y >= 2770) {
 
             $(".ktv-singledog").css({ opacity: 1 - [(-this.y - 2770) / 230] });
         }
+       
         if (-this.y >= 3030) {
 
             $(".doubleroom-singledog").css({ opacity: (-this.y - 3030) / 200 });
         }
+       
         if (-this.y >= 3550) {
 
             $(".doubleroom-singledog").css({ opacity: 1 - [(-this.y - 3550) / 300] });
         }
+       
         if (-this.y >= 3680) {
 
             $(".wheel-singledog").css({ opacity: (-this.y - 3680) / 200 });
         }
+      
         if (-this.y >= 4260) {
 
             $(".wheel-singledog").css({ opacity: 1 - [(-this.y - 4260) / 150] });
         }
-        if (-this.y >= 4465) {
+      
+       if (-this.y >= 4465) {
 
             $(".bank-singledog").css({ opacity: (-this.y - 4465) / 200 });
         }
@@ -214,5 +221,5 @@ $(function() {
             $(".bank-singledog").css({ opacity: 1 - [(-this.y - 4700) / 200] });
         }
     });
-
+   
 })
