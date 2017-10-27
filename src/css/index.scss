@@ -670,7 +670,7 @@ body {
             width: rem(192);
             height: rem(431);
 
-            opacity: 0;
+            // opacity: 0;
 
             @include bg_fn(url('../img/run.png'),
             no-repeat,

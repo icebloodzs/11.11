@@ -182,8 +182,17 @@ $(function() {
     })
 
 
+
+
+
     //iScroll 代码
     setTimeout(function(){
+        $(".hotel-singledog").css({ opacity: 0 })
+        $(".movie-singledog").css({ opacity: 0 })
+        $(".ktv-singledog").css({ opacity: 0 })
+        $(".doubleroom-singledog").css({ opacity: 0 })
+        $(".wheel-singledog").css({ opacity: 0 })
+        $(".bank-singledog").css({ opacity: 0 })
         
                         /**
                  * iScroll 实例
@@ -195,6 +204,7 @@ $(function() {
                         bounce: false,
                         scrollbars: true,
                         probeType:2,
+                        speedRatioY: 2,
                         // tap: true,
                         // onScrollMove: function(e){
                         //     console.log(e);
@@ -212,6 +222,7 @@ $(function() {
                         //像下滚
                         // if(!this.directionY){
                             if( rem(-1700) >= rem(this.y) ){
+
                                 $(".hotel-singledog").addClass("animated fadeInLeft")
                             }
                             if( rem(-4600) >= rem(this.y) ){
