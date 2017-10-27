@@ -1,4 +1,9 @@
 $(function() {
+
+    //rem 方法
+    function rem(size) {
+        return size / 750 * 10;
+    }
     
     var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
     $('.loading-in').animateNumber({
@@ -191,54 +196,63 @@ $(function() {
                     });
                     myScroll = new IScroll('#wrapper');
                     myScroll.on('scrollEnd', function() {
-                        console.log(-this.y)
-                        if (2000<=-this.y&&-this.y<=4000 ) {
+                        // console.log(-rem(this.y))
+                        var that= rem(this.y)
+
+
+                        if (rem(1180)<=-that&&-that<=rem(2560) ) {
+
                             $(".hotel-singledog").animate({opacity: 1}, 1000);
+                        
                 
-                        }
-                        if (-this.y >= 4100) {
+                        } else{
                             $(".hotel-singledog").animate({opacity: 0});
+                      
                 
                         }
-                        if (5000<=-this.y&&-this.y<=7000 ) {
+                        if (rem(2870)<=-that&&-that<=rem(4772) ) {
                             $(".movie-singledog").animate({opacity: 1}, 1000);
                 
                         }
-                        if (-this.y >= 7100) {
+                        if (-that >= rem(4773)) {
+                            console.log(234234234)
                             $(".movie-singledog").animate({opacity: 0});
                 
                         }
-                        if (8000<=-this.y&&-this.y<=10300 ) {
+                        if (rem(4800)<=-that&&-that<=rem(6500) ) {
                             $(".ktv-singledog").animate({opacity: 1}, 1000);
                 
                         }
-                        if (-this.y >= 10400) {
+                        if (-that >= rem(6500)) {
                             $(".ktv-singledog").animate({opacity: 0});
                 
                         }
-                        if (11200<=-this.y&&-this.y<=11624 ) {
+                        if (rem(6500)<=-that&&-that<=rem(7000) ) {
                             $(".doubleroom-singledog").animate({opacity: 1}, 1000);
                 
                         }
-                        if (-this.y >= 12800) {
+                        if (-that >= rem(7000)) {
                             $(".doubleroom-singledog").animate({opacity: 0});
                 
                         }
                       
-                        if (13200<=-this.y&&-this.y<=15570 ) {
+                        if (rem(7200)<=-that&&-that<=rem(9500) ) {
+                            
                             $(".wheel-singledog").animate({opacity: 1}, 1000);
                 
                         }
-                        if (-this.y >= 15670) {
+                        if (-that >= rem(9500)) {
                             $(".wheel-singledog").animate({opacity: 0});
                 
                         }
 
-                        if (16000<=-this.y&&-this.y<=18100 ) {
+                        if (rem(9500)<=-that&&-that<=rem(10200) ) {
                             $(".bank-singledog").animate({opacity: 1}, 1000);
                 
                         }
-                        if (-this.y >= 18200) {
+                        if (-that >= rem(10200) ) {
+                            // 
+                            // console.log(-this.y,12345767)
                             $(".bank-singledog").animate({opacity: 0});
                 
                         }
