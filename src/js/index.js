@@ -216,7 +216,7 @@ $(function() {
 
                     myScroll.on('scrollEnd', function(){
                         
-                        console.log(this.y);
+                     
 
                         var len= 2000
                         //像下滚
