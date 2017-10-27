@@ -581,10 +581,10 @@ body {
         .header-singledog-word1 {
             position: absolute;
             z-index: 11;
-            top: rem(0);
-
-            width: rem(750);
-            height: rem(800);
+            top: rem(77);
+            left: rem(302);
+            width: rem(191);
+            height: rem(51);
 
             opacity: 0;
 
@@ -596,10 +596,11 @@ body {
         .header-singledog-word2 {
             position: absolute;
             z-index: 11;
-            top: rem(0);
+            top: rem(173);
+            left: rem(340);
 
-            width: rem(750);
-            height: rem(800);
+            width: rem(350);
+            height: rem(53);
 
             opacity: 0;
 
@@ -611,10 +612,12 @@ body {
         .header-singledog-word3 {
             position: absolute;
             z-index: 11;
-            top: rem(0);
+            top: rem(277);
+            left: rem(340);
 
-            width: rem(750);
-            height: rem(800);
+
+            width: rem(299);
+            height: rem(52);
 
             opacity: 0;
 
@@ -626,10 +629,11 @@ body {
         .header-singledog-word4 {
             position: absolute;
             z-index: 11;
-            top: rem(0);
+            top: rem(387);
+            left: rem(440);
 
-            width: rem(750);
-            height: rem(800);
+            width: rem(227);
+            height: rem(52);
 
             opacity: 0;
 
@@ -645,12 +649,12 @@ body {
             top: rem(2100);
             left: rem(53);
 
-            width: rem(435);
-            height: rem(520);
+            width: rem(192);
+            height: rem(431);
 
             opacity: 0;
 
-            @include bg_fn(url('../img/run.gif'),
+            @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
             cover);
@@ -658,15 +662,15 @@ body {
         .movie-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(3953);
-            left: rem(203);
+            top: rem(4102);
+            left: rem(53);
 
-            width: rem(435);
-            height: rem(520);
+            width: rem(192);
+            height: rem(431);
 
             opacity: 0;
 
-            @include bg_fn(url('../img/run.gif'),
+            @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
             cover);
@@ -674,15 +678,15 @@ body {
         .ktv-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(5902);
-            left: rem(53);
+            top: rem(6052);
+            left: rem(353);
 
-            width: rem(435);
-            height: rem(520);
+            width: rem(192);
+            height: rem(431);
 
             opacity: 0;
 
-            @include bg_fn(url('../img/run.gif'),
+            @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
             cover);
@@ -690,15 +694,15 @@ body {
         .doubleroom-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(7725);
-            left: rem(353);
+            top: rem(7913);
+            left: rem(567);
 
-            width: rem(435);
-            height: rem(520);
+            width: rem(192);
+            height: rem(431);
 
             opacity: 0;
 
-            @include bg_fn(url('../img/run.gif'),
+            @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
             cover);
@@ -706,15 +710,15 @@ body {
         .wheel-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(9075);
-            left: rem(-128);
+            top: rem(8588);
+            left: rem(17.3);
 
-            width: rem(435);
-            height: rem(520);
+            width: rem(192);
+            height: rem(431);
 
             opacity: 0;
 
-            @include bg_fn(url('../img/run.gif'),
+            @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
             cover);
@@ -722,15 +726,15 @@ body {
         .bank-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(10523);
-            left: rem(398);
+            top: rem(10650);
+            left: rem(548);
 
-            width: rem(435);
-            height: rem(520);
+            width: rem(192);
+            height: rem(431);
 
             opacity: 0;
 
-            @include bg_fn(url('../img/run.gif'),
+            @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
             cover);
@@ -738,14 +742,14 @@ body {
         .peer-hotel {
             position: absolute;
             z-index: 12;
-            top: rem(1975);
-            left: rem(350);
+            top: rem(1634);
+            left: rem(200);
             ;
 
-            width: rem(375);
-            height: rem(142);
+            width: rem(200);
+            height: rem(300);
 
-            @include bg_fn(url('../img/peepbutton.png'),
+            @include bg_fn(url('../img/peepbuttonleft.png'),
             no-repeat,
             center,
             cover);
@@ -757,12 +761,13 @@ body {
         .peer-movie {
             position: absolute;
             z-index: 12;
-            top: rem(3848);
+            top: rem(3657);
+            left: rem(572);
 
-            width: rem(375);
-            height: rem(142);
+            width: rem(200);
+            height: rem(300);
 
-            @include bg_fn(url('../img/peepbutton.png'),
+            @include bg_fn(url('../img/peepbuttonright.png'),
             no-repeat,
             center,
             cover);
@@ -772,13 +777,13 @@ body {
         .peer-ktv {
             position: absolute;
             z-index: 12;
-            top: rem(5723);
-            left: rem(270);
+            top: rem(5560);
+            left: rem(158);
 
-            width: rem(375);
-            height: rem(142);
+            width: rem(200);
+            height: rem(300);
 
-            @include bg_fn(url('../img/peepbutton.png'),
+            @include bg_fn(url('../img/peepbuttonleft.png'),
             no-repeat,
             center,
             cover);
@@ -788,13 +793,13 @@ body {
         .peer-doubleroom {
             position: absolute;
             z-index: 12;
-            top: rem(7298);
-            left: rem(270);
+            top: rem(7282);
+            left: rem(552);
 
-            width: rem(375);
-            height: rem(142);
+            width: rem(200);
+            height: rem(300);
 
-            @include bg_fn(url('../img/peepbutton.png'),
+            @include bg_fn(url('../img/peepbuttonright.png'),
             no-repeat,
             center,
             cover);
@@ -804,13 +809,13 @@ body {
         .peer-wheel {
             position: absolute;
             z-index: 12;
-            top: rem(8797);
-            left: rem(270);
+            top: rem(8800);
+            left: rem(275);
 
-            width: rem(375);
-            height: rem(142);
+            width: rem(200);
+            height: rem(300);
 
-            @include bg_fn(url('../img/peepbutton.png'),
+            @include bg_fn(url('../img//peepbuttonright.png'),
             no-repeat,
             center,
             cover);
@@ -820,13 +825,13 @@ body {
         .peer-bank {
             position: absolute;
             z-index: 12;
-            top: rem(10598);
-            left: rem(195);
+            top: rem(10480);
+            left: rem(50);
 
-            width: rem(375);
-            height: rem(142);
+            width: rem(200);
+            height: rem(300);
 
-            @include bg_fn(url('../img/peepbutton.png'),
+            @include bg_fn(url('../img/peepbuttonleft.png'),
             no-repeat,
             center,
             cover);

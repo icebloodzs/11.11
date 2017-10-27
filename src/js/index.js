@@ -147,10 +147,7 @@ $(function() {
         e.stopPropagation();
         $("#boon_box").addClass("show")
     })
-    $("#get_welfare").click(function(e) {
-        e.stopPropagation();
-        window.location.href = "https://mp.weixin.qq.com/s/JKWAnja65ieI3beUb0finQ";
-    })
+   
     $("#share_dear").click(function(e) {
         e.stopPropagation();
         $("#share_dear_shadow").addClass("show");
@@ -192,67 +189,72 @@ $(function() {
                         scrollbars: true,
                         // tap: true,
                     });
-        
-                    myScroll.on('scrollStart', function() {
-                        // console.log(-this.y)
-                        if (-this.y >= 330) {
-                            $(".hotel-singledog").css({ opacity: (-this.y - 330) / 200 });
+                    myScroll = new IScroll('#wrapper');
+                    myScroll.on('scrollEnd', function() {
+                        console.log(-this.y)
+                        if (2000<=-this.y&&-this.y<=4000 ) {
+                            $(".hotel-singledog").animate({opacity: 1}, 1000);
+                
+                        }
+                        if (-this.y >= 4100) {
+                            $(".hotel-singledog").animate({opacity: 0});
+                
+                        }
+                        if (5000<=-this.y&&-this.y<=7000 ) {
+                            $(".movie-singledog").animate({opacity: 1}, 1000);
+                
+                        }
+                        if (-this.y >= 7100) {
+                            $(".movie-singledog").animate({opacity: 0});
+                
+                        }
+                        if (8000<=-this.y&&-this.y<=10300 ) {
+                            $(".ktv-singledog").animate({opacity: 1}, 1000);
+                
+                        }
+                        if (-this.y >= 10400) {
+                            $(".ktv-singledog").animate({opacity: 0});
+                
+                        }
+                        if (11200<=-this.y&&-this.y<=11624 ) {
+                            $(".doubleroom-singledog").animate({opacity: 1}, 1000);
+                
+                        }
+                        if (-this.y >= 12800) {
+                            $(".doubleroom-singledog").animate({opacity: 0});
                 
                         }
                       
-                        if (-this.y >= 750) {
+                        if (13200<=-this.y&&-this.y<=15570 ) {
+                            $(".wheel-singledog").animate({opacity: 1}, 1000);
                 
-                            $(".hotel-singledog").css({ opacity: 1 - [(-this.y - 750) / 400] });
                         }
-                     
-                        if (-this.y >= 1220) {
+                        if (-this.y >= 15670) {
+                            $(".wheel-singledog").animate({opacity: 0});
                 
-                            $(".movie-singledog").css({ opacity: (-this.y - 1220) / 250 });
                         }
-                      
-                        if (-this.y >= 1760) {
+
+                        if (16000<=-this.y&&-this.y<=18100 ) {
+                            $(".bank-singledog").animate({opacity: 1}, 1000);
                 
-                            $(".movie-singledog").css({ opacity: 1 - [(-this.y - 1760) / 300] });
                         }
-                     
-                        if (-this.y >= 2200) {
+                        if (-this.y >= 18200) {
+                            $(".bank-singledog").animate({opacity: 0});
                 
-                            $(".ktv-singledog").css({ opacity: (-this.y - 2200) / 200 });
                         }
-                     
-                        if (-this.y >= 2770) {
-                
-                            $(".ktv-singledog").css({ opacity: 1 - [(-this.y - 2770) / 230] });
-                        }
+                  
+                  
                        
-                        if (-this.y >= 3030) {
-                
-                            $(".doubleroom-singledog").css({ opacity: (-this.y - 3030) / 200 });
-                        }
-                       
-                        if (-this.y >= 3550) {
-                
-                            $(".doubleroom-singledog").css({ opacity: 1 - [(-this.y - 3550) / 300] });
-                        }
-                       
-                        if (-this.y >= 3680) {
-                
-                            $(".wheel-singledog").css({ opacity: (-this.y - 3680) / 200 });
-                        }
+                  
                       
-                        if (-this.y >= 4260) {
+                    //    if (-this.y >= 4465) {
                 
-                            $(".wheel-singledog").css({ opacity: 1 - [(-this.y - 4260) / 150] });
-                        }
-                      
-                       if (-this.y >= 4465) {
+                    //         $(".bank-singledog").css({ opacity: (-this.y - 4465) / 200 });
+                    //     }
+                    //     if (-this.y >= 4700) {
                 
-                            $(".bank-singledog").css({ opacity: (-this.y - 4465) / 200 });
-                        }
-                        if (-this.y >= 4700) {
-                
-                            $(".bank-singledog").css({ opacity: 1 - [(-this.y - 4700) / 200] });
-                        }
+                    //         $(".bank-singledog").css({ opacity: 1 - [(-this.y - 4700) / 200] });
+                    //     }
                     });
                 
                     
