@@ -652,7 +652,10 @@ body {
             width: rem(192);
             height: rem(431);
 
-            opacity: 0;
+            animation-duration: 1s;
+            animation-iteration-count: infinite; 
+
+            // opacity: 0;
 
             @include bg_fn(url('../img/run.png'),
             no-repeat,
@@ -744,8 +747,11 @@ body {
             z-index: 12;
             top: rem(1634);
             left: rem(200);
+            
+
             width: rem(200);
             height: rem(300);
+
             .asdfw{
                 width: rem(200);
                 height: rem(300);
@@ -756,7 +762,20 @@ body {
                 animation-iteration-count: infinite;
             }
         }
-
+        .peer-hotel-click{
+            position: absolute;
+            z-index: 11;
+            top: rem(1754);
+            left: rem(200);
+            width: rem(350);
+            height: rem(350);
+            animation-duration: 1s;
+            animation-iteration-count: infinite; 
+            @include bg_fn(url('../img/peerhotelclick.png'),
+            no-repeat,
+            center,
+            cover);
+        } 
 
 
 
@@ -769,10 +788,16 @@ body {
             width: rem(200);
             height: rem(300);
 
-            @include bg_fn(url('../img/peepbuttonright.png'),
-            no-repeat,
-            center,
-            cover);
+            
+            .asdfw{
+                width: rem(200);
+                height: rem(300);
+                @include bg_fn(url('../img/peepbuttonright.png'),
+                no-repeat,
+                center,
+                cover);
+                animation-iteration-count: infinite;
+            }
         }
 
 
@@ -785,10 +810,16 @@ body {
             width: rem(200);
             height: rem(300);
 
-            @include bg_fn(url('../img/peepbuttonleft.png'),
-            no-repeat,
-            center,
-            cover);
+            
+            .asdfw{
+                width: rem(200);
+                height: rem(300);
+                @include bg_fn(url('../img/peepbuttonleft.png'),
+                no-repeat,
+                center,
+                cover);
+                animation-iteration-count: infinite;
+            }
         }
 
 
@@ -801,10 +832,16 @@ body {
             width: rem(200);
             height: rem(300);
 
-            @include bg_fn(url('../img/peepbuttonright.png'),
-            no-repeat,
-            center,
-            cover);
+            
+            .asdfw{
+                width: rem(200);
+                height: rem(300);
+                @include bg_fn(url('../img/peepbuttonright.png'),
+                no-repeat,
+                center,
+                cover);
+                animation-iteration-count: infinite;
+            }
         }
 
 
@@ -817,10 +854,16 @@ body {
             width: rem(200);
             height: rem(300);
 
-            @include bg_fn(url('../img//peepbuttonright.png'),
-            no-repeat,
-            center,
-            cover);
+            
+            .asdfw{
+                width: rem(200);
+                height: rem(300);
+                @include bg_fn(url('../img//peepbuttonright.png'),
+                no-repeat,
+                center,
+                cover);
+                animation-iteration-count: infinite;
+            }
         }
 
 
@@ -833,10 +876,16 @@ body {
             width: rem(200);
             height: rem(300);
 
-            @include bg_fn(url('../img/peepbuttonleft.png'),
-            no-repeat,
-            center,
-            cover);
+            
+            .asdfw{
+                width: rem(200);
+                height: rem(300);
+                @include bg_fn(url('../img/peepbuttonleft.png'),
+                no-repeat,
+                center,
+                cover);
+                animation-iteration-count: infinite;
+            }
         }
         .singledog-boon {
             position: absolute;

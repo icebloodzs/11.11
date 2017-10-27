@@ -7,8 +7,9 @@
     var scale = 0;
     var tid;
     var flexible = lib.flexible || (lib.flexible = {});
-
+    
     if (metaEl) {
+        
         console.warn('将根据已有的meta标签来设置缩放比例');
         var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
         if (match) {
@@ -16,6 +17,7 @@
             dpr = parseInt(1 / scale);
         }
     } else if (flexibleEl) {
+        
         var content = flexibleEl.getAttribute('content');
         if (content) {
             var initialDpr = content.match(/initial\-dpr=([\d\.]+)/);
@@ -32,6 +34,7 @@
     }
 
     if (!dpr && !scale) {
+        
         var isAndroid = win.navigator.appVersion.match(/android/gi);
         var isIPhone = win.navigator.appVersion.match(/iphone/gi);
         var devicePixelRatio = win.devicePixelRatio;
@@ -53,6 +56,7 @@
 
     docEl.setAttribute('data-dpr', dpr);
     if (!metaEl) {
+        
         metaEl = doc.createElement('meta');
         metaEl.setAttribute('name', 'viewport');
         metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
