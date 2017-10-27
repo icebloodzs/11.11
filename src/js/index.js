@@ -1,4 +1,28 @@
 $(function() {
+
+    function rem(size) {
+        return size/750*10;
+    }
+
+    function isPassive() {
+        var supportsPassiveOption = false;
+        try {
+            addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function() {
+                    supportsPassiveOption = true;
+                }
+            }));
+        } catch (e) {}
+        return supportsPassiveOption;
+    }
+
+    document.addEventListener('touchmove', function(e) { e.preventDefault(); }, isPassive() ? {
+        capture: false,
+        passive: false
+    } : false);
+
+
+
     
     var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
     $('.loading-in').animateNumber({
@@ -161,108 +185,123 @@ $(function() {
     //iScroll 代码
     setTimeout(function(){
         
-                var myScroll;
-        
-            
-                /**
+                        /**
                  * iScroll 实例
                  * @returns 
                  */
-                function isPassive() {
-                    var supportsPassiveOption = false;
-                    try {
-                        addEventListener("test", null, Object.defineProperty({}, 'passive', {
-                            get: function() {
-                                supportsPassiveOption = true;
-                            }
-                        }));
-                    } catch (e) {}
-                    return supportsPassiveOption;
-                }
-                
-        
-                
-                    myScroll = new IScroll('#wrapper', {
+                var myScroll = new IScroll('#wrapper', {
                         click: true,
                         scrollY: true,
                         bounce: false,
                         scrollbars: true,
+                        probeType:2,
                         // tap: true,
+                        // onScrollMove: function(e){
+                        //     console.log(e);
+                        // },
+                        // scrollEnd: function(e){
+                        //     console.log(e);
+                        // },
                     });
-                    myScroll = new IScroll('#wrapper');
-                    myScroll.on('scrollEnd', function() {
-                        console.log(-this.y)
-                        if (2000<=-this.y&&-this.y<=4000 ) {
-                            $(".hotel-singledog").animate({opacity: 1}, 1000);
-                
-                        }
-                        if (-this.y >= 4100) {
-                            $(".hotel-singledog").animate({opacity: 0});
-                
-                        }
-                        if (5000<=-this.y&&-this.y<=7000 ) {
-                            $(".movie-singledog").animate({opacity: 1}, 1000);
-                
-                        }
-                        if (-this.y >= 7100) {
-                            $(".movie-singledog").animate({opacity: 0});
-                
-                        }
-                        if (8000<=-this.y&&-this.y<=10300 ) {
-                            $(".ktv-singledog").animate({opacity: 1}, 1000);
-                
-                        }
-                        if (-this.y >= 10400) {
-                            $(".ktv-singledog").animate({opacity: 0});
-                
-                        }
-                        if (11200<=-this.y&&-this.y<=11624 ) {
-                            $(".doubleroom-singledog").animate({opacity: 1}, 1000);
-                
-                        }
-                        if (-this.y >= 12800) {
-                            $(".doubleroom-singledog").animate({opacity: 0});
-                
-                        }
-                      
-                        if (13200<=-this.y&&-this.y<=15570 ) {
-                            $(".wheel-singledog").animate({opacity: 1}, 1000);
-                
-                        }
-                        if (-this.y >= 15670) {
-                            $(".wheel-singledog").animate({opacity: 0});
-                
-                        }
 
-                        if (16000<=-this.y&&-this.y<=18100 ) {
-                            $(".bank-singledog").animate({opacity: 1}, 1000);
-                
+                    myScroll.on('scrollEnd', function(){
+                        
+                        console.log(this.y);
+                        //像下滚
+                        if(!this.directionY){
+                            if( rem(-1700) >= rem(this.y) ){
+                                $(".hotel-singledog").animate({opacity: 1}, 1000);
+                            }
+                            if( rem(-4600) >= rem(this.y) ){
+                                $(".movie-singledog").animate({opacity: 1}, 1000);
+                            }
+                            if( rem(-7700) >= rem(this.y) ){
+                                $(".ktv-singledog").animate({opacity: 1}, 1000);
+                            }
+                            if( rem(-11200) >= rem(this.y) ){
+                                $(".doubleroom-singledog").animate({opacity: 1}, 1000);
+                            }
+                            if( rem(-12000) >= rem(this.y) ){
+                                $(".wheel-singledog").animate({opacity: 1}, 1000);
+                            }
+                            if( rem(-15600) >= rem(this.y) ){
+                                $(".bank-singledog").animate({opacity: 1}, 1000);
+                            }
                         }
-                        if (-this.y >= 18200) {
-                            $(".bank-singledog").animate({opacity: 0});
+                    });
+                    
+                    
+                    // myScroll = new IScroll('#wrapper');
+                    // myScroll.on('scrollEnd', function() {
+                        
+                    //     if (2000<=-this.y&&-this.y<=4000 ) {
+                    //         $(".hotel-singledog").animate({opacity: 1}, 1000);
                 
-                        }
+                    //     }
+                    //     if (-this.y >= 4100) {
+                    //         $(".hotel-singledog").animate({opacity: 0});
+                
+                    //     }
+                    //     if (5000<=-this.y&&-this.y<=7000 ) {
+                    //         $(".movie-singledog").animate({opacity: 1}, 1000);
+                
+                    //     }
+                    //     if (-this.y >= 7100) {
+                    //         $(".movie-singledog").animate({opacity: 0});
+                
+                    //     }
+                    //     if (8000<=-this.y&&-this.y<=10300 ) {
+                    //         $(".ktv-singledog").animate({opacity: 1}, 1000);
+                
+                    //     }
+                    //     if (-this.y >= 10400) {
+                    //         $(".ktv-singledog").animate({opacity: 0});
+                
+                    //     }
+                    //     if (11200<=-this.y&&-this.y<=11624 ) {
+                    //         $(".doubleroom-singledog").animate({opacity: 1}, 1000);
+                
+                    //     }
+                    //     if (-this.y >= 12800) {
+                    //         $(".doubleroom-singledog").animate({opacity: 0});
+                
+                    //     }
+                      
+                    //     if (13200<=-this.y&&-this.y<=15570 ) {
+                    //         $(".wheel-singledog").animate({opacity: 1}, 1000);
+                
+                    //     }
+                    //     if (-this.y >= 15670) {
+                    //         $(".wheel-singledog").animate({opacity: 0});
+                
+                    //     }
+
+                    //     if (16000<=-this.y&&-this.y<=18100 ) {
+                    //         $(".bank-singledog").animate({opacity: 1}, 1000);
+                
+                    //     }
+                    //     if (-this.y >= 18200) {
+                    //         $(".bank-singledog").animate({opacity: 0});
+                
+                    //     }
                   
                   
                        
                   
                       
-                    //    if (-this.y >= 4465) {
+                    // //    if (-this.y >= 4465) {
                 
-                    //         $(".bank-singledog").css({ opacity: (-this.y - 4465) / 200 });
-                    //     }
-                    //     if (-this.y >= 4700) {
+                    // //         $(".bank-singledog").css({ opacity: (-this.y - 4465) / 200 });
+                    // //     }
+                    // //     if (-this.y >= 4700) {
                 
-                    //         $(".bank-singledog").css({ opacity: 1 - [(-this.y - 4700) / 200] });
-                    //     }
-                    });
+                    // //         $(".bank-singledog").css({ opacity: 1 - [(-this.y - 4700) / 200] });
+                    // //     }
+                    // });
                 
                     
                 
-                document.addEventListener('touchmove', function(e) { e.preventDefault(); }, isPassive() ? {
-                    capture: false,
-                    passive: false
-                } : false);
+                
         
             },200)
    

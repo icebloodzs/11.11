@@ -744,15 +744,17 @@ body {
             z-index: 12;
             top: rem(1634);
             left: rem(200);
-            ;
-
             width: rem(200);
             height: rem(300);
-
-            @include bg_fn(url('../img/peepbuttonleft.png'),
-            no-repeat,
-            center,
-            cover);
+            .asdfw{
+                width: rem(200);
+                height: rem(300);
+                @include bg_fn(url('../img/peepbuttonleft.png'),
+                no-repeat,
+                center,
+                cover);
+                animation-iteration-count: infinite;
+            }
         }
 
 
