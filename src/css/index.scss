@@ -4,47 +4,6 @@
 .clear {
     clear: both;
 }
-
-body,
-html {
-    height: 100%;
-}
-
-body {
-    overflow: hidden;
-
-    width: rem(750);
-}
-
-#wrapper {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    /* Prevent native touch events on Windows */
-    -ms-touch-action: none;
-    /* Prevent the callout on tap-hold and text selection */
-    -webkit-touch-callout: none;
-    /* Prevent text resize on orientation change, useful for web-apps */
-    -webkit-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    -o-text-size-adjust: none;
-    text-size-adjust: none;
-}
-
-#scroller {
-    position: absolute;
-    /* Put the scroller into the HW Compositing layer right from the start */
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
-    /* Prevent elements to be highlighted on tap */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
 .loading {
     z-index: 100;
 
@@ -457,22 +416,12 @@ body {
 }
 
 .app {
-    position: absolute;
-
     overflow: hidden;
-
     width: rem(750);
-    height: 100%;
+    margin: 0 auto;
+    position: relative;
+
     .container {
-        position: absolute;
-        z-index: -10;
-
-        overflow: hidden;
-        &.show {
-            z-index: 10;
-
-            display: block;
-        }
         .architecture {
             width: rem(750);
             height: rem(1280);
@@ -648,14 +597,9 @@ body {
             z-index: 11;
             top: rem(2100);
             left: rem(53);
-
+            // display: none;
             width: rem(192);
             height: rem(431);
-
-            animation-duration: 1s;
-
-            // opacity: 0;
-
             @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
@@ -686,8 +630,6 @@ body {
             width: rem(192);
             height: rem(431);
 
-            opacity: 0;
-
             @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
@@ -701,8 +643,6 @@ body {
 
             width: rem(192);
             height: rem(431);
-
-            opacity: 0;
 
             @include bg_fn(url('../img/run.png'),
             no-repeat,
@@ -718,8 +658,6 @@ body {
             width: rem(192);
             height: rem(431);
 
-            opacity: 0;
-
             @include bg_fn(url('../img/run.png'),
             no-repeat,
             center,
@@ -734,7 +672,7 @@ body {
             width: rem(192);
             height: rem(431);
 
-            opacity: 0;
+        
 
             @include bg_fn(url('../img/run.png'),
             no-repeat,
