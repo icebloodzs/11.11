@@ -1,4 +1,5 @@
 $(function() {
+    
     var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
     $('.loading-in').animateNumber({
             number: 100,
@@ -159,67 +160,108 @@ $(function() {
         $("#share_dear_shadow").removeClass("show");
     })
 
-    myScroll = new IScroll('#wrapper');
-    myScroll.on('scrollStart', function() {
-        // console.log(-this.y)
-        if (-this.y >= 330) {
-            $(".hotel-singledog").css({ opacity: (-this.y - 330) / 200 });
 
-        }
-      
-        if (-this.y >= 750) {
-
-            $(".hotel-singledog").css({ opacity: 1 - [(-this.y - 750) / 400] });
-        }
-     
-        if (-this.y >= 1220) {
-
-            $(".movie-singledog").css({ opacity: (-this.y - 1220) / 250 });
-        }
-      
-        if (-this.y >= 1760) {
-
-            $(".movie-singledog").css({ opacity: 1 - [(-this.y - 1760) / 300] });
-        }
-     
-        if (-this.y >= 2200) {
-
-            $(".ktv-singledog").css({ opacity: (-this.y - 2200) / 200 });
-        }
-     
-        if (-this.y >= 2770) {
-
-            $(".ktv-singledog").css({ opacity: 1 - [(-this.y - 2770) / 230] });
-        }
-       
-        if (-this.y >= 3030) {
-
-            $(".doubleroom-singledog").css({ opacity: (-this.y - 3030) / 200 });
-        }
-       
-        if (-this.y >= 3550) {
-
-            $(".doubleroom-singledog").css({ opacity: 1 - [(-this.y - 3550) / 300] });
-        }
-       
-        if (-this.y >= 3680) {
-
-            $(".wheel-singledog").css({ opacity: (-this.y - 3680) / 200 });
-        }
-      
-        if (-this.y >= 4260) {
-
-            $(".wheel-singledog").css({ opacity: 1 - [(-this.y - 4260) / 150] });
-        }
-      
-       if (-this.y >= 4465) {
-
-            $(".bank-singledog").css({ opacity: (-this.y - 4465) / 200 });
-        }
-        if (-this.y >= 4700) {
-
-            $(".bank-singledog").css({ opacity: 1 - [(-this.y - 4700) / 200] });
-        }
-    });
+    //iScroll 代码
+    setTimeout(function(){
+        
+                var myScroll;
+        
+            
+                /**
+                 * iScroll 实例
+                 * @returns 
+                 */
+                function isPassive() {
+                    var supportsPassiveOption = false;
+                    try {
+                        addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                            get: function() {
+                                supportsPassiveOption = true;
+                            }
+                        }));
+                    } catch (e) {}
+                    return supportsPassiveOption;
+                }
+                
+        
+                
+                    myScroll = new IScroll('#wrapper', {
+                        click: true,
+                        scrollY: true,
+                        bounce: false,
+                        scrollbars: true,
+                        // tap: true,
+                    });
+        
+                    myScroll.on('scrollStart', function() {
+                        // console.log(-this.y)
+                        if (-this.y >= 330) {
+                            $(".hotel-singledog").css({ opacity: (-this.y - 330) / 200 });
+                
+                        }
+                      
+                        if (-this.y >= 750) {
+                
+                            $(".hotel-singledog").css({ opacity: 1 - [(-this.y - 750) / 400] });
+                        }
+                     
+                        if (-this.y >= 1220) {
+                
+                            $(".movie-singledog").css({ opacity: (-this.y - 1220) / 250 });
+                        }
+                      
+                        if (-this.y >= 1760) {
+                
+                            $(".movie-singledog").css({ opacity: 1 - [(-this.y - 1760) / 300] });
+                        }
+                     
+                        if (-this.y >= 2200) {
+                
+                            $(".ktv-singledog").css({ opacity: (-this.y - 2200) / 200 });
+                        }
+                     
+                        if (-this.y >= 2770) {
+                
+                            $(".ktv-singledog").css({ opacity: 1 - [(-this.y - 2770) / 230] });
+                        }
+                       
+                        if (-this.y >= 3030) {
+                
+                            $(".doubleroom-singledog").css({ opacity: (-this.y - 3030) / 200 });
+                        }
+                       
+                        if (-this.y >= 3550) {
+                
+                            $(".doubleroom-singledog").css({ opacity: 1 - [(-this.y - 3550) / 300] });
+                        }
+                       
+                        if (-this.y >= 3680) {
+                
+                            $(".wheel-singledog").css({ opacity: (-this.y - 3680) / 200 });
+                        }
+                      
+                        if (-this.y >= 4260) {
+                
+                            $(".wheel-singledog").css({ opacity: 1 - [(-this.y - 4260) / 150] });
+                        }
+                      
+                       if (-this.y >= 4465) {
+                
+                            $(".bank-singledog").css({ opacity: (-this.y - 4465) / 200 });
+                        }
+                        if (-this.y >= 4700) {
+                
+                            $(".bank-singledog").css({ opacity: 1 - [(-this.y - 4700) / 200] });
+                        }
+                    });
+                
+                    
+                
+                document.addEventListener('touchmove', function(e) { e.preventDefault(); }, isPassive() ? {
+                    capture: false,
+                    passive: false
+                } : false);
+        
+            },200)
    
 })

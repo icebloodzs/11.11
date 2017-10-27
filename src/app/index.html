@@ -1,39 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     @@include('header.inc')
     <title>11.11</title>
     <link rel="stylesheet" href="../css/index.css" />
-    <script type="text/javascript">
-    function isPassive() {
-        var supportsPassiveOption = false;
-        try {
-            addEventListener("test", null, Object.defineProperty({}, 'passive', {
-                get: function() {
-                    supportsPassiveOption = true;
-                }
-            }));
-        } catch (e) {}
-        return supportsPassiveOption;
-    }
-    var myScroll;
-
-    function loaded() {
-        myScroll = new IScroll('#wrapper', {
-            click: true,
-            scrollY: true,
-            tap: true,
-        });
-    }
-    document.addEventListener('touchmove', function(e) { e.preventDefault(); }, isPassive() ? {
-        capture: false,
-        passive: false
-    } : false);
-    </script>
 </head>
 
-<body onload="loaded()">
+<body>
     <div class="loading">
         <span class="loading-in">0%</span>
     </div>
