@@ -66,7 +66,7 @@ function loaded () {
 
   // 播放音乐
   var music = $('#music')[0]
-  music.src = '../img/music.mp3'
+  music.src = imgPrefix + '/img/music.mp3'
   music.play()
 
   //头部动画
