@@ -7,8 +7,8 @@
 	<meta name="apple-mobile-web-app-capable" content="yes"> 
 	<link href="//cdn.bootcss.com/aos/1.2.2/aos.css" rel="stylesheet">
 	<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-	<script src="../js/common.js"></script>
-	<script src="../js/flexible.js"></script>
+	<script src="../js/common_6b42ee730d.js"></script>
+	<script src="../js/flexible_23c1143a8c.js"></script>
 	<script src="//cdn.bootcss.com/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
 	<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 	<script src="//cdn.bootcss.com/aos/1.2.2/aos.js"></script>
@@ -17,13 +17,17 @@
 
 
     <title>偷窥隔壁情侣</title>
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/index_72d599d90f.css"/>
 </head>
 
 <body>
-    <div class="loading">
-        <span class="loading-in">0%</span>
-    </div>
+<div class="loading">
+    <span class="loading-in">0%</span>
+</div>
+<div id="template_container"></div>
+
+
+<script id="template" type="text/x-template">
     <div class="share"></div>
     <div id="share_dear_shadow" class="share-dear-shadow"></div>
     <!-- 旅店弹窗 -->
@@ -75,9 +79,9 @@
             <div id="share_dear" class="share-dear"></div>
         </div>
     </div>
-    <div class="app" >
-        <div class="container">
-            <audio id="music" type="audio/mp3"  preload="auto"  loop></audio>
+    <div class="app">
+        <div class="container show">
+            <audio id="music" type="audio/mp3" preload="auto" loop></audio>
             <div class="architecture"></div>
             <div class="hotel"></div>
             <div class="movie"></div>
@@ -95,14 +99,14 @@
             <div class="header-singledog-word4"></div>
             <div class="hotel-singledog" data-aos="fade-right" data-aos-anchor-placement="center-bottom"></div>
             <div class="hotel-down" data-aos="fade-down" data-aos-anchor-placement="center-bottom"></div>
-            <div id="peer_hotel" class="peer-hotel" >
-                <div class="asdfw"></div>   
+            <div id="peer_hotel" class="peer-hotel">
+                <div class="asdfw"></div>
             </div>
             <div class="peer-hotel-click animated pulse"></div>
             <div class="movie-singledog" data-aos="fade-left" data-aos-anchor-placement="center-bottom"></div>
             <div class="movie-down" data-aos="fade-down" data-aos-anchor-placement="center-bottom"></div>
             <div id="peer_movie" class="peer-movie">
-                <div class="asdfw animated pulse"></div>   
+                <div class="asdfw animated pulse"></div>
             </div>
             <div class="ktv-singledog" data-aos="fade-right" data-aos-anchor-placement="center-bottom"></div>
             <div class="ktv-down" data-aos="fade-down" data-aos-anchor-placement="center-bottom"></div>
@@ -124,10 +128,14 @@
             <div id="peer_bank" class="peer-bank">
                 <div class="asdfw animated pulse"></div>
             </div>
-            <div id="singledog_boon"  class="singledog-boon"></div>
+            <div id="singledog_boon" class="singledog-boon"></div>
         </div>
     </div>
-    <script src="../js/index.js"></script>
+</script>
+
+
+<script src="../js/resLoader_172aa15ed5.js"></script>
+<script src="../js/index_8c2057c76f.js"></script>
 </body>
 
 </html>
