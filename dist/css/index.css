@@ -173,15 +173,17 @@ html {
     background-position: center;
     background-size: cover; }
   .hotel-box .go-on {
+    display: block;
     position: absolute;
     top: 13.70667rem;
-    left: 0.84rem;
+    left: 0.6rem;
     width: 3.54667rem;
     height: 1.01333rem; }
   .hotel-box .will-share {
+    display: block;
     position: absolute;
     top: 13.70667rem;
-    left: 5.18667rem;
+    left: 4.49067rem;
     width: 3.54667rem;
     height: 1.01333rem; }
 
@@ -210,13 +212,13 @@ html {
   .movie-box .go-on {
     position: absolute;
     top: 13.70667rem;
-    left: 0.84rem;
+    left: 0.6rem;
     width: 3.54667rem;
     height: 1.01333rem; }
   .movie-box .will-share {
     position: absolute;
     top: 13.70667rem;
-    left: 5.18667rem;
+    left: 4.49067rem;
     width: 3.54667rem;
     height: 1.01333rem; }
 
@@ -245,13 +247,13 @@ html {
   .ktv-box .go-on {
     position: absolute;
     top: 13.70667rem;
-    left: 0.84rem;
+    left: 0.6rem;
     width: 3.54667rem;
     height: 1.01333rem; }
   .ktv-box .will-share {
     position: absolute;
     top: 13.70667rem;
-    left: 5.18667rem;
+    left: 4.49067rem;
     width: 3.54667rem;
     height: 1.01333rem; }
 
@@ -280,13 +282,13 @@ html {
   .doubleroom-box .go-on {
     position: absolute;
     top: 13.70667rem;
-    left: 0.84rem;
+    left: 0.6rem;
     width: 3.54667rem;
     height: 1.01333rem; }
   .doubleroom-box .will-share {
     position: absolute;
     top: 13.70667rem;
-    left: 5.18667rem;
+    left: 4.49067rem;
     width: 3.54667rem;
     height: 1.01333rem; }
 
@@ -315,13 +317,13 @@ html {
   .wheel-box .go-on {
     position: absolute;
     top: 13.70667rem;
-    left: 0.84rem;
+    left: 0.6rem;
     width: 3.54667rem;
     height: 1.01333rem; }
   .wheel-box .will-share {
     position: absolute;
     top: 13.70667rem;
-    left: 5.18667rem;
+    left: 4.49067rem;
     width: 3.54667rem;
     height: 1.01333rem; }
 
@@ -350,13 +352,13 @@ html {
   .bank-box .go-on {
     position: absolute;
     top: 13.70667rem;
-    left: 0.84rem;
+    left: 0.6rem;
     width: 3.54667rem;
     height: 1.01333rem; }
   .bank-box .will-share {
     position: absolute;
     top: 13.70667rem;
-    left: 5.18667rem;
+    left: 4.49067rem;
     width: 3.54667rem;
     height: 1.01333rem; }
 
@@ -544,6 +546,17 @@ html {
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
+    .app .container .hotel-down {
+      position: absolute;
+      z-index: 11;
+      width: 1rem;
+      height: 1.06667rem;
+      top: 33.66667rem;
+      left: 1.1rem;
+      background-image: url("../img/down.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
     .app .container .movie-singledog {
       position: absolute;
       z-index: 11;
@@ -551,18 +564,40 @@ html {
       left: 6.7rem;
       width: 2.56rem;
       height: 5.74667rem;
-      background-image: url("../img/run.png");
+      background-image: url("../img/run2.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    .app .container .movie-down {
+      position: absolute;
+      z-index: 11;
+      width: 1rem;
+      height: 1.06667rem;
+      top: 59rem;
+      left: 7.7rem;
+      background-image: url("../img/down.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
     .app .container .ktv-singledog {
       position: absolute;
       z-index: 11;
-      top: 80.69333rem;
-      left: 5.7rem;
+      top: 80.83333rem;
+      left: 3.9rem;
       width: 2.56rem;
       height: 5.74667rem;
       background-image: url("../img/run.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    .app .container .ktv-down {
+      position: absolute;
+      z-index: 11;
+      width: 1rem;
+      height: 1.06667rem;
+      top: 86.5rem;
+      left: 4.3rem;
+      background-image: url("../img/down.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
@@ -570,10 +605,21 @@ html {
       position: absolute;
       z-index: 11;
       top: 103.5rem;
-      left: 7.56rem;
+      left: 6.56rem;
       width: 2.56rem;
       height: 5.74667rem;
-      background-image: url("../img/run.png");
+      background-image: url("../img/run2.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    .app .container .doubleroom-down {
+      position: absolute;
+      z-index: 11;
+      width: 1rem;
+      height: 1.06667rem;
+      top: 108.70667rem;
+      left: 7.56rem;
+      background-image: url("../img/down.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
@@ -588,14 +634,36 @@ html {
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
+    .app .container .wheel-down {
+      position: absolute;
+      z-index: 11;
+      width: 1rem;
+      height: 1.06667rem;
+      top: 127.66667rem;
+      left: 0.63067rem;
+      background-image: url("../img/down.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
     .app .container .bank-singledog {
       position: absolute;
       z-index: 11;
-      top: 142rem;
+      top: 141rem;
       left: 7.30667rem;
       width: 2.56rem;
       height: 5.74667rem;
-      background-image: url("../img/run.png");
+      background-image: url("../img/run2.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
+    .app .container .bank-down {
+      position: absolute;
+      z-index: 11;
+      width: 1rem;
+      height: 1.06667rem;
+      top: 146.31333rem;
+      left: 8.3rem;
+      background-image: url("../img/down.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }

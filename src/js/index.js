@@ -1,5 +1,5 @@
-$(function() {
-    //加载动画
+
+window.onload=function() {
     var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
     $('.loading-in').animateNumber({
             number: 100,
@@ -11,11 +11,14 @@ $(function() {
     setTimeout(function() {
         $('.loading').addClass("hide");
         $('.container').addClass("show");
-
+       
         AOS.init({
             easing: 'ease-out-back',
             duration: 1000,
         });
+        $("#music").attr("src","../img/music.mp3");
+        var player =$("#music")[0];
+        player.play();
     }, 3200);
 
     //头部动画

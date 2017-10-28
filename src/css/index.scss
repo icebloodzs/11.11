@@ -107,17 +107,19 @@
         cover);
     }
     .go-on {
+        display: block;
         position: absolute;
         top: rem(1028);
-        left: rem(63);
+        left: rem(45);
 
         width: rem(266);
         height: rem(76);
     }
     .will-share {
+        display: block;
         position: absolute;
         top: rem(1028);
-        left: rem(389);
+        left: rem(336.8);
 
         width: rem(266);
         height: rem(76);
@@ -158,7 +160,7 @@
     .go-on {
         position: absolute;
         top: rem(1028);
-        left: rem(63);
+        left: rem(45);
 
         width: rem(266);
         height: rem(76);
@@ -166,7 +168,7 @@
     .will-share {
         position: absolute;
         top: rem(1028);
-        left: rem(389);
+         left: rem(336.8);
 
         width: rem(266);
         height: rem(76);
@@ -207,7 +209,7 @@
     .go-on {
         position: absolute;
         top: rem(1028);
-        left: rem(63);
+        left: rem(45);
 
         width: rem(266);
         height: rem(76);
@@ -215,7 +217,7 @@
     .will-share {
         position: absolute;
         top: rem(1028);
-        left: rem(389);
+         left: rem(336.8);
 
         width: rem(266);
         height: rem(76);
@@ -256,7 +258,7 @@
     .go-on {
         position: absolute;
         top: rem(1028);
-        left: rem(63);
+        left: rem(45);
 
         width: rem(266);
         height: rem(76);
@@ -264,7 +266,7 @@
     .will-share {
         position: absolute;
         top: rem(1028);
-        left: rem(389);
+         left: rem(336.8);
 
         width: rem(266);
         height: rem(76);
@@ -305,7 +307,7 @@
     .go-on {
         position: absolute;
         top: rem(1028);
-        left: rem(63);
+        left: rem(45);
 
         width: rem(266);
         height: rem(76);
@@ -313,7 +315,7 @@
     .will-share {
         position: absolute;
         top: rem(1028);
-        left: rem(389);
+         left: rem(336.8);
 
         width: rem(266);
         height: rem(76);
@@ -354,7 +356,7 @@
     .go-on {
         position: absolute;
         top: rem(1028);
-        left: rem(63);
+        left: rem(45);
 
         width: rem(266);
         height: rem(76);
@@ -362,7 +364,7 @@
     .will-share {
         position: absolute;
         top: rem(1028);
-        left: rem(389);
+         left: rem(336.8);
 
         width: rem(266);
         height: rem(76);
@@ -608,6 +610,18 @@
             center,
             cover);
         }
+        .hotel-down{ 
+            position: absolute;
+            z-index: 11;
+            width: rem(75);
+            height: rem(80);
+            top: rem(2525);
+            left: rem(82.5);
+            @include bg_fn(url('../img/down.png'),
+            no-repeat,
+            center,
+            cover);
+        }
         .movie-singledog {
             position: absolute;
             z-index: 11;
@@ -618,7 +632,19 @@
             height: rem(431);
 
 
-            @include bg_fn(url('../img/run.png'),
+            @include bg_fn(url('../img/run2.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .movie-down{
+            position: absolute;
+            z-index: 11;
+            width: rem(75);
+            height: rem(80);
+            top: rem(4425);
+            left: rem(577.5);
+            @include bg_fn(url('../img/down.png'),
             no-repeat,
             center,
             cover);
@@ -626,13 +652,25 @@
         .ktv-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(6052);
-            left: rem(427.5);
+            top: rem(6062.5);
+            left: rem(292.5);
 
             width: rem(192);
             height: rem(431);
 
             @include bg_fn(url('../img/run.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .ktv-down{
+            position: absolute;
+            z-index: 11;
+            width: rem(75);
+            height: rem(80);
+            top: rem(6487.5);
+            left: rem(322.5);
+            @include bg_fn(url('../img/down.png'),
             no-repeat,
             center,
             cover);
@@ -641,12 +679,24 @@
             position: absolute;
             z-index: 11;
             top: rem(7762.5);
-            left: rem(567);
+            left: rem(492);
 
             width: rem(192);
             height: rem(431);
 
-            @include bg_fn(url('../img/run.png'),
+            @include bg_fn(url('../img/run2.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+          .doubleroom-down{
+            position: absolute;
+            z-index: 11;
+            width: rem(75);
+            height: rem(80);
+            top: rem(8153);
+            left: rem(567);
+            @include bg_fn(url('../img/down.png'),
             no-repeat,
             center,
             cover);
@@ -665,10 +715,22 @@
             center,
             cover);
         }
+        .wheel-down{
+            position: absolute;
+            z-index: 11;
+            width: rem(75);
+            height: rem(80);
+            top: rem(9575);
+            left: rem(47.3);
+            @include bg_fn(url('../img/down.png'),
+            no-repeat,
+            center,
+            cover);
+        }
         .bank-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(10650);
+            top: rem(10575);
             left: rem(548);
 
             width: rem(192);
@@ -676,7 +738,19 @@
 
         
 
-            @include bg_fn(url('../img/run.png'),
+            @include bg_fn(url('../img/run2.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        .bank-down{
+            position: absolute;
+            z-index: 11;
+            width: rem(75);
+            height: rem(80);
+            top: rem(10973.5);
+            left: rem(622.5);
+            @include bg_fn(url('../img/down.png'),
             no-repeat,
             center,
             cover);
