@@ -1,18 +1,12 @@
 $(function() {
-
-
-
-    function rem(size) {
-        return size/750*10;
-    }
-    
+    //加载动画
     var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
     $('.loading-in').animateNumber({
             number: 100,
             easing: 'easeInQuad',
             numberStep: percent_number_step
         },
-        1000
+        3000
     );
     setTimeout(function() {
         $('.loading').addClass("hide");
@@ -20,25 +14,25 @@ $(function() {
 
         AOS.init({
             easing: 'ease-out-back',
-            duration: 1000
-    
+            duration: 1000,
         });
-    }, 1200);
+    }, 3200);
+
     //头部动画
 
-    $(".header-singledog").delay(1000).animate({
-        opacity: 1
-    }, 1000);
-    $(".header-singledog-word1").delay(2000).animate({
+    $(".header-singledog").delay(3500).animate({
         opacity: 1
     }, 500);
-    $(".header-singledog-word2").delay(2500).animate({
+    $(".header-singledog-word1").delay(4000).animate({
         opacity: 1
     }, 500);
-    $(".header-singledog-word3").delay(3000).animate({
+    $(".header-singledog-word2").delay(4500).animate({
         opacity: 1
     }, 500);
-    $(".header-singledog-word4").delay(3500).animate({
+    $(".header-singledog-word3").delay(5000).animate({
+        opacity: 1
+    }, 500);
+    $(".header-singledog-word4").delay(5500).animate({
         opacity: 1
     }, 500);
 

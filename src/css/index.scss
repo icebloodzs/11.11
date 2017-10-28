@@ -422,6 +422,10 @@
     position: relative;
 
     .container {
+        display: none;
+        &.show{
+          display: block;
+        }
         .architecture {
             width: rem(750);
             height: rem(1280);
@@ -597,7 +601,6 @@
             z-index: 11;
             top: rem(2100);
             left: rem(53);
-            // display: none;
             width: rem(192);
             height: rem(431);
             @include bg_fn(url('../img/run.png'),
@@ -608,13 +611,12 @@
         .movie-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(4102);
-            left: rem(53);
+            top: rem(4042.5);
+            left: rem(502.5);
 
             width: rem(192);
             height: rem(431);
 
-            // opacity: 0;
 
             @include bg_fn(url('../img/run.png'),
             no-repeat,
@@ -625,7 +627,7 @@
             position: absolute;
             z-index: 11;
             top: rem(6052);
-            left: rem(353);
+            left: rem(427.5);
 
             width: rem(192);
             height: rem(431);
@@ -638,7 +640,7 @@
         .doubleroom-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(7913);
+            top: rem(7762.5);
             left: rem(567);
 
             width: rem(192);
@@ -652,7 +654,7 @@
         .wheel-singledog {
             position: absolute;
             z-index: 11;
-            top: rem(8588);
+            top: rem(9150);
             left: rem(17.3);
 
             width: rem(192);
@@ -785,7 +787,7 @@
         .peer-wheel {
             position: absolute;
             z-index: 12;
-            top: rem(8800);
+            top: rem(8887.5);
             left: rem(275);
 
             width: rem(200);

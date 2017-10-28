@@ -9,7 +9,7 @@
 	<script src="../js/flexible.js"></script>
 	<script src="https://cdn.bootcss.com/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
 	<!-- <script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll-probe.min.js"></script> -->
-	<!-- <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet"> -->
+	<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 	
 	<script src="//cdn.bootcss.com/aos/1.2.2/aos.js"></script>
 	
