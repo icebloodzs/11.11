@@ -67,7 +67,22 @@ function loaded () {
   // 播放音乐
   var music = $('#music')[0]
   music.src = imgPrefix + '/img/music.mp3'
-  music.play()
+  function audioAutoPlay(id){  
+    var audio = document.getElementById(id),  
+        play = function(){  
+            audio.play();  
+            document.removeEventListener("touchstart",play, false);  
+        };  
+    audio.play();  
+    document.addEventListener("WeixinJSBridgeReady", function () {  
+        play();  
+     }, false);  
+     document.addEventListener('YixinJSBridgeReady', function() {  
+         play();  
+     }, false);  
+     document.addEventListener("touchstart",play, false);  
+ }  
+ audioAutoPlay('music');  
 
   //头部动画
 
