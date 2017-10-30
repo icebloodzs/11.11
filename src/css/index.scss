@@ -518,6 +518,19 @@
             center,
             cover);
         }
+        .peerboonlclick{
+            position: absolute;
+            z-index: 11;
+            width: rem(162);
+            height: rem(115);
+            top: rem(12225);
+            left:rem(407.3);
+            @include bg_fn(url('../img/peerboonlclick.png'),
+            no-repeat,
+            center,
+            cover);
+        }
+        
         .header-singledog {
             position: absolute;
             z-index: 11;
@@ -568,7 +581,7 @@
             position: absolute;
             z-index: 11;
             top: rem(277);
-            left: rem(340);
+            left: rem(392.3);
 
 
             width: rem(299);
@@ -909,5 +922,6 @@
             width: rem(142);
             height: rem(220);
         }
+      
     }
 }

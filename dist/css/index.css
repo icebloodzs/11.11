@@ -476,6 +476,17 @@ html {
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover; }
+    .app .container .peerboonlclick {
+      position: absolute;
+      z-index: 11;
+      width: 2.16rem;
+      height: 1.53333rem;
+      top: 163rem;
+      left: 5.43067rem;
+      background-image: url("../img/peerboonlclick.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover; }
     .app .container .header-singledog {
       position: absolute;
       z-index: 11;
@@ -515,7 +526,7 @@ html {
       position: absolute;
       z-index: 11;
       top: 3.69333rem;
-      left: 4.53333rem;
+      left: 5.23067rem;
       width: 3.98667rem;
       height: 0.69333rem;
       opacity: 0;

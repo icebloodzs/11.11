@@ -36,7 +36,8 @@ window.onload = function () {
       imgPrefix + '/img/sshareshade.png',
       imgPrefix + '/img/tree.gif',
       imgPrefix + '/img/wheel.gif',
-      imgPrefix + '/img/wheelpopover.gif'
+      imgPrefix + '/img/wheelpopover.gif',
+      imgPrefix + '/img/peerboonlclick.png'
     ],
     onStart: function (total) {
       // console.log('start:' + total)
