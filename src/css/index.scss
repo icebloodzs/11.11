@@ -385,7 +385,7 @@
     background: rgba(0, 0, 0, .6);
     padding-left: rem(45);
     &.show {
-        z-index: 13;
+        z-index: 21;
 
         opacity: 1;
     }
@@ -520,7 +520,6 @@
         }
         .peerboonlclick{
             position: absolute;
-            z-index: 11;
             width: rem(162);
             height: rem(115);
             top: rem(12225);

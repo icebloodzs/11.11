@@ -373,7 +373,7 @@ html {
   background: rgba(0, 0, 0, 0.6);
   padding-left: 0.6rem; }
   .boon-box.show {
-    z-index: 13;
+    z-index: 21;
     opacity: 1; }
   .boon-box .get-singledog-boon {
     position: absolute;
@@ -478,7 +478,6 @@ html {
       background-size: cover; }
     .app .container .peerboonlclick {
       position: absolute;
-      z-index: 11;
       width: 2.16rem;
       height: 1.53333rem;
       top: 163rem;
